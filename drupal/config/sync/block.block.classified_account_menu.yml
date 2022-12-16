@@ -1,0 +1,27 @@
+uuid: 98c8312a-4506-4eb1-99b2-64b289c94337
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - classified
+_core:
+  default_config_hash: CVdof-F4eO7FKjpdCyA2yBf-DWE8GbZ9Nj6REiDRfTc
+id: classified_account_menu
+theme: classified
+region: header
+weight: -3
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

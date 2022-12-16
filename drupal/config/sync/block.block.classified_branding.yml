@@ -1,0 +1,25 @@
+uuid: cd31af44-13a6-48b4-bad3-4534194cada4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - classified
+_core:
+  default_config_hash: jeQ6T1XBsDGaeYfVi56100LkBH0dmYg5APhu3_WnpRI
+id: classified_branding
+theme: classified
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

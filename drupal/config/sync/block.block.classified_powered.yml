@@ -1,0 +1,22 @@
+uuid: 404a8d0f-f98e-4ad6-9b01-97f841dc94ff
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - classified
+_core:
+  default_config_hash: ODpE5FbGh-srFCyGpFQQkM0zccVLA5eD8AxswvejXJo
+id: classified_powered
+theme: classified
+region: header
+weight: -5
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

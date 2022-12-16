@@ -1,0 +1,58 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Add facilities.
+ */
+function hcpss_facilities_install() {
+  /** @var \Drupal\hcpss_facilities\SchoolQuery $school_query */
+  $school_query = \Drupal::service('hcpss_faciliies.query');
+
+  $location_exists = function (int $code): bool {
+    $tids = \Drupal::entityQuery('taxonomy_term')
+      ->condition('vid', 'locations')
+      ->condition('field_code', $code)
+      ->execute();
+
+    return !empty($tids);
+  };
+
+  foreach ($school_query->getFacilities() as $facility) {
+    if (!$facility['code'] || $location_exists($facility['code'])) {
+      continue;
+    }
+
+    Term::create([
+      'vid' => 'locations',
+      'name' => $facility['name'],
+      'field_code' => $facility['code'],
+      'address' => [
+        'country_code' => 'US',
+        'administrative_area' => $facility['address']['state'],
+        'locality' => $facility['address']['city'],
+        'postal_code' => $facility['address']['postal_code'],
+        'address_line1' => $facility['address']['street'],
+      ],
+    ])->save();
+  }
+
+  foreach ($school_query->getSchools() as $school) {
+    if (!$school['location_code'] || $location_exists($school['location_code'])) {
+      continue;
+    }
+
+    Term::create([
+      'vid' => 'locations',
+      'name' => $school['full_name'],
+      'field_code' => $school['location_code'],
+      'address' => [
+        'country_code' => 'US',
+        'administrative_area' => 'MD',
+        'locality' => $school['address']['city'],
+        'postal_code' => $school['address']['postal_code'],
+        'address_line1' => $school['address']['street'],
+      ],
+    ])->save();
+  }
+}

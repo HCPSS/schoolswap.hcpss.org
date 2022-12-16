@@ -1,0 +1,8 @@
+uuid: e36b8ac4-f74f-41d4-b613-7fc8359b8457
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: category
+description: 'Categorize classified listings.'
+weight: 0

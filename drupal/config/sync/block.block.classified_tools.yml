@@ -1,0 +1,27 @@
+uuid: 4223a8f3-704f-4657-a2a1-fcc415d8939c
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - classified
+_core:
+  default_config_hash: dfBq-Zx49n8ehZ-WrTRF2puV4szOhWN6OcW7kSM03Ds
+id: classified_tools
+theme: classified
+region: header
+weight: -4
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

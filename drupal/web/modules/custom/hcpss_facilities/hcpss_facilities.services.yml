@@ -1,0 +1,5 @@
+services:
+  hcpss_faciliies.query:
+    class: Drupal\hcpss_facilities\SchoolQuery
+    arguments:
+      -  'https://api.hocoschools.org'

@@ -1,0 +1,22 @@
+uuid: 57206fc7-8c04-4154-a97d-cc69fe27f026
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - parity
+_core:
+  default_config_hash: sgNl4K7wllQc0CCDvKAd_V7gYk1guuRBPwffIRmgqzk
+id: parity_help
+theme: parity
+region: content
+weight: -8
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

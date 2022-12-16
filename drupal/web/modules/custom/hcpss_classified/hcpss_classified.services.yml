@@ -1,0 +1,4 @@
+services:
+  hcpss_classified.asset_generator:
+    class: Drupal\hcpss_classified\Helpers\ListingAssetGenerator
+    arguments: [ '@file_system', '@entity_type.manager', '@file.repository', '@extension.list.module' ]

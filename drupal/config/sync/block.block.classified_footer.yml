@@ -1,0 +1,27 @@
+uuid: e6af1fa0-e2b8-485b-b1d0-feb97eb4a334
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - classified
+_core:
+  default_config_hash: N7V9WiXBmZeJK64Id9cU15o2dV6msuHnjxRJswHT4CE
+id: classified_footer
+theme: classified
+region: header
+weight: -2
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

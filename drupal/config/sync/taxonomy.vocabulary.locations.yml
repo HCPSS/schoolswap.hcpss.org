@@ -1,0 +1,10 @@
+uuid: 6aad71a9-1100-4bb2-81fa-a14fc6c41d12
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: CxCKq_kbhLBc8Jxo6RX3L5Y8wudJyKI1OEZ4mDgCZsw
+name: Locations
+vid: locations
+description: 'HCPSS schools and facilities.'
+weight: 0

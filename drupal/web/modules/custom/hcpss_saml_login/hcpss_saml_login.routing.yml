@@ -1,0 +1,7 @@
+hcpss_saml_login.login:
+  path: /login
+  methods: [GET]
+  defaults:
+    _controller: '\Drupal\hcpss_saml_login\Controller\RedirectController::samlLogin'
+  requirements:
+    _role: 'anonymous'

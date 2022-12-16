@@ -1,0 +1,22 @@
+uuid: a2f501c7-3826-493f-b467-78aaaa1ecf16
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - parity
+_core:
+  default_config_hash: '-SW-7oJ6nciwe02M0kHEAOjDZMZJTv03YZawxUUVfzQ'
+id: parity_content
+theme: parity
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

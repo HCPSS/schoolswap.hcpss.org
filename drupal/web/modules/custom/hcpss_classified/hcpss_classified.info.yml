@@ -1,0 +1,15 @@
+name: 'HCPSS Classified'
+description: 'Classified listings and views.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - field
+  - image
+  - menu_ui
+  - node
+  - path
+  - taxonomy
+  - text
+  - user
+  - views
+version: 1.0.0

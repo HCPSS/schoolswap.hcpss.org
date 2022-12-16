@@ -1,0 +1,23 @@
+name: classified
+type: theme
+base theme: parity
+description: A site specific theme.
+package: HCPSS
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - classified/global
+  - parity/global-styling
+  - core/normalize
+regions:
+  header: Header
+  primary_menu: Primary Menu
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: Sidebar first
+  sidebar_second: Sidebar second
+  footer_first: Footer (first)
+  footer_second: Footer (second)
+  page_top: Page top
+  page_bottom: Page bottom

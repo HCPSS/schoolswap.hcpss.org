@@ -1,0 +1,7 @@
+name: HCPSS SAML Login
+type: module
+description: Add login url for SAML
+package: HCPSS
+core_version_requirement: ^9 || ^10
+dependencies:
+  - simplesamlphp_auth

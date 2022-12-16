@@ -1,0 +1,20 @@
+uuid: 43ba4441-e9a0-4587-876e-b5509160a817
+langcode: en
+status: true
+dependencies:
+  theme:
+    - classified
+_core:
+  default_config_hash: IB80rTu4FdX1mJ_gqZmI1-MsSmLjvsiIB_ExxaCW2_U
+id: classified_local_actions
+theme: classified
+region: content
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

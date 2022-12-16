@@ -1,0 +1,22 @@
+uuid: aaa91232-461a-45cf-9bab-fd3f3d8fbf54
+langcode: en
+status: true
+dependencies:
+  theme:
+    - classified
+_core:
+  default_config_hash: HcSHKGyn71WhrtfNpZHja4k4oytaNLWcnWq88KvrZ4Y
+id: classified_local_tasks
+theme: classified
+region: content
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

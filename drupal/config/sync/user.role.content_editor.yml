@@ -1,0 +1,47 @@
+uuid: 3cb0d3e5-6c61-43a8-8522-7d394c33e03c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.listing
+    - taxonomy.vocabulary.tags
+  module:
+    - comment
+    - contextual
+    - file
+    - node
+    - path
+    - system
+    - taxonomy
+    - toolbar
+    - tour
+_core:
+  default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
+id: content_editor
+label: 'Content editor'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'access tour'
+  - 'administer url aliases'
+  - 'create listing content'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'delete any listing content'
+  - 'delete listing revisions'
+  - 'delete own listing content'
+  - 'edit any listing content'
+  - 'edit own comments'
+  - 'edit own listing content'
+  - 'edit terms in tags'
+  - 'revert all revisions'
+  - 'revert listing revisions'
+  - 'view all revisions'
+  - 'view listing revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

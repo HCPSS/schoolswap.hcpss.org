@@ -1,0 +1,22 @@
+uuid: efa6a23f-8eb2-4980-a70a-fb504c544206
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - classified
+_core:
+  default_config_hash: '-SW-7oJ6nciwe02M0kHEAOjDZMZJTv03YZawxUUVfzQ'
+id: classified_content
+theme: classified
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

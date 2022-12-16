@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_in_search_of
+    - node.type.listing
+id: node.listing.field_in_search_of
+field_name: field_in_search_of
+entity_type: node
+bundle: listing
+label: 'In Search Of'
+description: 'This is a listing for an item you are looking for, not one that you have.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

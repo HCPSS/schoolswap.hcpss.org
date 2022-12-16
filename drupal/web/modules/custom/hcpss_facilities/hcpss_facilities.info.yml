@@ -1,0 +1,11 @@
+name: 'HCPSS Facilities'
+description: 'Taxonomy terms for HCPSS schools and administrative buildings.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - address
+  - field
+  - path
+  - taxonomy
+  - text
+version: 1.0.0

@@ -1,0 +1,37 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function hcpss_classified_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-listing-page-1') {
+    /** @var \Drupal\taxonomy\TermStorage $storage */
+    $storage = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term');
+
+    $categories = $storage->loadTree('category');
+    $locations = $storage->loadTree('locations');
+
+    $options_formatter = function (array $terms) {
+      return array_reduce($terms, function ($carry, $item) {
+        $label = $item->parents[0] ? "- {$item->name}" : $item->name;
+        $carry[$item->name] = $label;
+        return $carry;
+      }, ['' => '- Any -']);
+    };
+
+    $form['categories_name'] = [
+      '#type' => 'select',
+      '#title' => t('Category'),
+      '#options' => $options_formatter($categories),
+    ];
+
+    $form['location_name'] = [
+      '#type' => 'select',
+      '#title' => t('Location'),
+      '#options' => $options_formatter($locations),
+    ];
+  }
+}
