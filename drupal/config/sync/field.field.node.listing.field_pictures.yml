@@ -7,6 +7,10 @@ dependencies:
     - node.type.listing
   module:
     - image
+    - simple_image_rotate
+third_party_settings:
+  simple_image_rotate:
+    enable_rotate: 1
 _core:
   default_config_hash: 1BmaiZHgytTSF1ZhI8TPrmempVLvyCsPGe6ickvKIZw
 id: node.listing.field_pictures
