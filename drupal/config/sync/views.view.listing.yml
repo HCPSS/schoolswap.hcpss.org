@@ -10,7 +10,7 @@ dependencies:
     - image.style.thumbnail
     - search_api.index.default_index
   module:
-    - image
+    - colorbox
     - search_api
     - taxonomy
     - text
@@ -193,7 +193,7 @@ display:
           admin_label: ''
           entity_type: node
           plugin_id: search_api_field
-          label: Quantity
+          label: Available
           exclude: false
           alter:
             alter_text: false
@@ -318,21 +318,24 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: colorbox
           settings:
-            image_link: ''
-            image_style: thumbnail
-            image_loading:
-              attribute: lazy
+            colorbox_node_style: hide
+            colorbox_node_style_first: thumbnail
+            colorbox_image_style: ''
+            colorbox_gallery: post
+            colorbox_gallery_custom: ''
+            colorbox_caption: auto
+            colorbox_caption_custom: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
-          delta_limit: 1
+          delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
+          separator: ''
           field_api_classes: false
           field_rendering: true
           fallback_handler: search_api

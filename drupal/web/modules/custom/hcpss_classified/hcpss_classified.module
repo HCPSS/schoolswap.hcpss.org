@@ -27,11 +27,5 @@ function hcpss_classified_form_views_exposed_form_alter(&$form, FormStateInterfa
       '#title' => t('Category'),
       '#options' => $options_formatter($categories),
     ];
-
-    $form['location_name'] = [
-      '#type' => 'select',
-      '#title' => t('Location'),
-      '#options' => $options_formatter($locations),
-    ];
   }
 }

@@ -9,7 +9,7 @@ id: node.listing.field_quantity
 field_name: field_quantity
 entity_type: node
 bundle: listing
-label: Quantity
+label: Available
 description: ''
 required: true
 translatable: false

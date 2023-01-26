@@ -25,12 +25,25 @@
                     "reference": "master"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jackmoore/colorbox",
+                "version": "1.6.4",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/jackmoore/colorbox/archive/1.6.4.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
         "composer/installers": "^1.9",
         "drupal/address": "^1.11",
         "drupal/auto_entitylabel": "^3.0",
+        "drupal/colorbox": "^2.0",
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-project-message": "^9.4",
         "drupal/core-recommended": "^9.4",
@@ -44,6 +57,7 @@
         "drupal/token": "^1.11",
         "drush/drush": "^11.3",
         "hcpss/parity": "dev-master",
+        "jackmoore/colorbox": "^1.6",
         "simplesamlphp/simplesamlphp": " ^1.19"
     },
     "conflict": {
