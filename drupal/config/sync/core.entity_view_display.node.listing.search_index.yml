@@ -6,8 +6,8 @@ dependencies:
     - core.entity_view_mode.node.search_index
     - field.field.node.listing.body
     - field.field.node.listing.field_categories
-    - field.field.node.listing.field_location
     - field.field.node.listing.field_pictures
+    - field.field.node.listing.field_quantity
     - image.style.large
     - node.type.listing
   module:
@@ -36,14 +36,6 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
-  field_location:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 103
-    region: content
   field_pictures:
     type: image
     label: above
@@ -61,4 +53,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_quantity: true
   search_api_excerpt: true

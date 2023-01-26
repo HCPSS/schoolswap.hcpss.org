@@ -1,0 +1,25 @@
+uuid: 11f4fc5b-d3fc-42cf-b529-ff9440107f4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_quantity
+    - node.type.listing
+id: node.listing.field_quantity
+field_name: field_quantity
+entity_type: node
+bundle: listing
+label: Quantity
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

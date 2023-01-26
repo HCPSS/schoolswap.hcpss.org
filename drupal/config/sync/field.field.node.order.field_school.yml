@@ -1,0 +1,19 @@
+uuid: ffd0cd13-4ee2-478d-8a4e-e1cb933bb6ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_school
+    - node.type.order
+id: node.order.field_school
+field_name: field_school
+entity_type: node
+bundle: order
+label: 'School or Office'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

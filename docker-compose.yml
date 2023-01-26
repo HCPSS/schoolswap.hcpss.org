@@ -59,6 +59,7 @@ services:
 #    command: >812
 #      bash -c "drush --root=/var/www/drupal/web upwd banderson admin
 #      && apache2-foreground"
+#    entrypoint: tail -f /dev/null
     networks:
       database:
       email:

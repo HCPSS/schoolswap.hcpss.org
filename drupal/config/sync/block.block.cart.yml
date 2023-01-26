@@ -1,0 +1,20 @@
+uuid: c85b1386-949b-4f0b-9f15-35e747c2f428
+langcode: en
+status: true
+dependencies:
+  module:
+    - hcpss_classified
+  theme:
+    - classified
+id: cart
+theme: classified
+region: content
+weight: -5
+provider: null
+plugin: hcpss_classified_cart
+settings:
+  id: hcpss_classified_cart
+  label: Cart
+  label_display: '0'
+  provider: hcpss_classified
+visibility: {  }

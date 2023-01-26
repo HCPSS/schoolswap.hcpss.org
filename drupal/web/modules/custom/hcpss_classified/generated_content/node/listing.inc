@@ -69,7 +69,7 @@ function _hcpss_classified_create_node_listing__variation_to_fields($node, $vari
     return $pictures;
   };
 
+  $node->field_quantity = rand(1, 19);
   $node->field_categories = $get_term('category', $variation['categories']);
-  $node->field_location = $get_term('locations', $variation['location']);
   $node->field_pictures = $get_pictures($variation['pictures']['prefix'], $variation['pictures']['indices']);
 }

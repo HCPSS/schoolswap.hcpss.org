@@ -1,0 +1,31 @@
+uuid: 6298ea4b-2f61-4f3a-8b6a-b99f8232c6d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_line_items
+    - node.type.order
+    - paragraphs.paragraphs_type.line_item
+  module:
+    - entity_reference_revisions
+id: node.order.field_line_items
+field_name: field_line_items
+entity_type: node
+bundle: order
+label: 'Line Items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      line_item: line_item
+    negate: 0
+    target_bundles_drag_drop:
+      line_item:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

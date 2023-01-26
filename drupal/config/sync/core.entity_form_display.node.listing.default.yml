@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.field.node.listing.body
     - field.field.node.listing.field_categories
-    - field.field.node.listing.field_location
     - field.field.node.listing.field_pictures
+    - field.field.node.listing.field_quantity
     - image.style.thumbnail
     - node.type.listing
   module:
@@ -42,12 +42,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_location:
-    type: options_select
-    weight: 123
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_pictures:
     type: image_image
     weight: 122
@@ -55,6 +49,13 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_quantity:
+    type: number
+    weight: 125
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path

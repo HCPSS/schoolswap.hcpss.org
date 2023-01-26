@@ -1,0 +1,21 @@
+uuid: aebf8e0c-e478-441e-b280-e9231cf585f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_return_date
+    - node.type.order
+  module:
+    - datetime
+id: node.order.field_return_date
+field_name: field_return_date
+entity_type: node
+bundle: order
+label: 'Date of Return'
+description: Optional
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

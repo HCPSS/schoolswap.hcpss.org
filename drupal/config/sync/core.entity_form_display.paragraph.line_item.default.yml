@@ -1,0 +1,33 @@
+uuid: a2aa1828-bb2a-49f8-aee8-a34af931ed9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.line_item.field_listing
+    - field.field.paragraph.line_item.field_quantity
+    - paragraphs.paragraphs_type.line_item
+id: paragraph.line_item.default
+targetEntityType: paragraph
+bundle: line_item
+mode: default
+content:
+  field_listing:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_quantity:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

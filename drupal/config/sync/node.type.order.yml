@@ -1,0 +1,17 @@
+uuid: 632f9d20-8545-4a6b-addf-8b5561d48a59
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Order
+type: order
+description: 'Use to order listings for a school.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

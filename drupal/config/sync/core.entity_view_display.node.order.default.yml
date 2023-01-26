@@ -1,0 +1,78 @@
+uuid: 1ae9a1d2-d319-4152-ad73-111ab52475ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.order.field_comments
+    - field.field.node.order.field_date
+    - field.field.node.order.field_line_items
+    - field.field.node.order.field_name
+    - field.field.node.order.field_return_date
+    - field.field.node.order.field_school
+    - node.type.order
+  module:
+    - datetime
+    - entity_reference_revisions
+    - user
+id: node.order.default
+targetEntityType: node
+bundle: order
+mode: default
+content:
+  field_comments:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_line_items:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_return_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_school:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_categories
-    - field.storage.node.field_location
     - field.storage.node.field_pictures
+    - field.storage.node.field_quantity
     - image.style.thumbnail
     - search_api.index.default_index
   module:
@@ -31,6 +31,89 @@ display:
     display_options:
       title: Home
       fields:
+        nid:
+          id: nid
+          table: search_api_datasource_default_index_entity_node
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
+          label: ID
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_numeric
+          fallback_options:
+            set_precision: false
+            precision: 0
+            decimal: .
+            separator: ','
+            format_plural: false
+            format_plural_string: !!binary MQNAY291bnQ=
+            prefix: ''
+            suffix: ''
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            format_plural_values:
+              - '1'
+              - '@count'
         title:
           id: title
           table: search_api_index_default_index
@@ -101,6 +184,89 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
+        field_quantity:
+          id: field_quantity
+          table: search_api_datasource_default_index_entity_node
+          field: field_quantity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
+          label: Quantity
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_numeric
+          fallback_options:
+            set_precision: false
+            precision: 0
+            decimal: .
+            separator: ','
+            format_plural: false
+            format_plural_string: !!binary MQNAY291bnQ=
+            prefix: ''
+            suffix: ''
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            format_plural_values:
+              - '1'
+              - '@count'
         field_pictures:
           id: field_pictures
           table: search_api_datasource_default_index_entity_node
@@ -324,20 +490,19 @@ display:
                 view_mode: default
               tags:
                 display_method: label
-        field_location_1:
-          id: field_location_1
-          table: search_api_datasource_default_index_entity_node
-          field: field_location
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          plugin_id: search_api_field
-          label: Location
+          plugin_id: custom
+          label: Request
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<a href="{{ path(''hcpss_classified.add_to_cart'', {''node'': nid}, {''query'': {''destination'': path(''<current>'')}}) }}" class="button">Request</a>'
             make_link: false
             path: ''
             absolute: false
@@ -373,36 +538,7 @@ display:
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: false
-          fallback_handler: search_api_entity
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            display_methods:
-              category:
-                display_method: label
-              locations:
-                display_method: label
-                view_mode: default
-              tags:
-                display_method: label
+          hide_alter_empty: false
       pager:
         type: mini
         options:
@@ -554,53 +690,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        location_name:
-          id: location_name
-          table: search_api_index_default_index
-          field: location_name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_text
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: location_name_op
-            label: Location
-            description: ''
-            use_operator: false
-            operator: location_name_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: location_name
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -628,17 +717,6 @@ display:
           plugin_id: search_api
           required: false
           skip_access: false
-        field_location:
-          id: field_location
-          table: search_api_datasource_default_index_entity_node
-          field: field_location
-          relationship: none
-          group_type: group
-          admin_label: 'Location: Taxonomy term'
-          entity_type: node
-          plugin_id: search_api
-          required: false
-          skip_access: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -654,8 +732,8 @@ display:
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_categories'
-        - 'config:field.storage.node.field_location'
         - 'config:field.storage.node.field_pictures'
+        - 'config:field.storage.node.field_quantity'
         - 'config:search_api.index.default_index'
   page_1:
     id: page_1
@@ -677,6 +755,6 @@ display:
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_categories'
-        - 'config:field.storage.node.field_location'
         - 'config:field.storage.node.field_pictures'
+        - 'config:field.storage.node.field_quantity'
         - 'config:search_api.index.default_index'

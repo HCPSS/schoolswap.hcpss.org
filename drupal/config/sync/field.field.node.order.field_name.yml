@@ -1,0 +1,19 @@
+uuid: 2e64a6dd-cfd6-41ef-8eea-5425d5352966
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_name
+    - node.type.order
+id: node.order.field_name
+field_name: field_name
+entity_type: node
+bundle: order
+label: Name
+description: 'Your name.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

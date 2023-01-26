@@ -1,0 +1,31 @@
+hcpss_classified.add_to_cart:
+  path: '/add/{node}'
+  defaults:
+    _title: 'Add to cart'
+    _form: 'Drupal\hcpss_classified\Form\AddToCartForm'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: 'entity:node'
+
+hcpss_classified.checkout:
+  path: '/checkout'
+  defaults:
+    _title: 'Checkout'
+    _form: 'Drupal\hcpss_classified\Form\CheckoutForm'
+  requirements:
+    _permission: 'access content'
+
+hcpss_classified.remove_listing:
+  path: '/remove/{node}'
+  defaults:
+    _title: 'Remove'
+    _controller: '\Drupal\hcpss_classified\Controller\HcpssClassifiedController::build'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: 'entity:node'

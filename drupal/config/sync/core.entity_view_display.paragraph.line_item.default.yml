@@ -1,0 +1,32 @@
+uuid: 2d6070ce-3d70-43de-b9e9-f17ddbc2f262
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.line_item.field_listing
+    - field.field.paragraph.line_item.field_quantity
+    - paragraphs.paragraphs_type.line_item
+id: paragraph.line_item.default
+targetEntityType: paragraph
+bundle: line_item
+mode: default
+content:
+  field_listing:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_quantity:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

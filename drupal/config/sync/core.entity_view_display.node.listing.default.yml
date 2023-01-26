@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.field.node.listing.body
     - field.field.node.listing.field_categories
-    - field.field.node.listing.field_location
     - field.field.node.listing.field_pictures
+    - field.field.node.listing.field_quantity
     - image.style.large
     - node.type.listing
   module:
@@ -35,14 +35,6 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
-  field_location:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 103
-    region: content
   field_pictures:
     type: image
     label: above
@@ -53,6 +45,15 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_quantity:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 105
     region: content
   links:
     settings: {  }

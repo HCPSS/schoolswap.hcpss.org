@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_categories
-    - field.storage.node.field_location
     - search_api.server.default_server
     - core.entity_view_mode.node.search_index
   module:
@@ -63,16 +62,6 @@ field_settings:
     dependencies:
       module:
         - node
-  location_name:
-    label: 'Location » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_location:entity:name'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_location
-      module:
-        - taxonomy
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -169,7 +158,6 @@ processor_settings:
       - author
       - body
       - categories_name
-      - location_name
       - rendered_item
       - title
       - type
@@ -190,7 +178,6 @@ processor_settings:
       - author
       - body
       - categories_name
-      - location_name
       - rendered_item
       - title
       - type
@@ -207,7 +194,6 @@ processor_settings:
     fields:
       - body
       - categories_name
-      - location_name
       - rendered_item
       - title
     exceptions:
@@ -221,7 +207,6 @@ processor_settings:
     fields:
       - body
       - categories_name
-      - location_name
       - rendered_item
       - title
     spaces: ''
