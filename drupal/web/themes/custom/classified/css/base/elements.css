@@ -1,1 +1,7 @@
+.page .form-actions > * {
+  margin-top: 0;
+}
 
+#block-cart .cart {
+  text-align: right;
+}

@@ -34,11 +34,6 @@ class AddToCartForm extends FormBase {
     $session = $this->getRequest()->getSession();
     $cart = $session->get('cart', []);
 
-    $form['description'] = [
-      '#type' => 'item',
-      '#markup' => sprintf('<p>Add %s to your cart?</p>', $node->toLink()->toString()),
-    ];
-
     $form['quantity'] = [
       '#type' => 'number',
       '#title' => $this->t('Quantity'),
@@ -46,6 +41,11 @@ class AddToCartForm extends FormBase {
       '#default_value' => empty($cart[$node->id()]) ? 1 : $cart[$node->id()],
       '#min' => 1,
       '#max' => $node->field_quantity->value,
+    ];
+
+    $form['available'] = [
+      '#type' => 'item',
+      '#markup' => "Available: ".$node->field_quantity->value,
     ];
 
     $form['nid'] = [
@@ -65,16 +65,6 @@ class AddToCartForm extends FormBase {
     $form['actions']['checkout'] = [
       '#type' => 'submit',
       '#value' => $this->t('Add and Checkout'),
-    ];
-
-    $cancel = Url::fromRoute('<front>');
-    if ($destination = $this->getRequest()->get('destination')) {
-      $cancel = Url::fromUri("base:$destination");
-    }
-    $form['actions']['cancel'] = [
-      '#type' => 'link',
-      '#title' => $this->t('Cancel'),
-      '#url' => $cancel,
     ];
 
     return $form;

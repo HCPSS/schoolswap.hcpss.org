@@ -97,14 +97,14 @@ class CartBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     if ($count) {
       $build['content'] = [
-        '#markup' => vsprintf('<p>%d items in cart. <a href="%s">Checkout &raquo;</a></p>', [
+        '#markup' => vsprintf('<div class="cart">%d items in cart. <a href="%s">Checkout &raquo;</a></div>', [
           $count,
           Url::fromRoute('hcpss_classified.checkout')->toString(),
         ]),
       ];
     } else {
       $build['content'] = [
-        '#markup' => '<p>0 items in cart.</p>',
+        '#markup' => '<div class="cart">0 items in cart.</div>',
       ];
     }
 

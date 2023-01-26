@@ -22,3 +22,8 @@ global:
       css/layouts/layout.css: {}
     theme:
       css/theme/print.css: { media: print }
+image_on_left:
+  version: VERSION
+  css:
+    theme:
+      layouts/image_on_left/image_on_left.css: {}

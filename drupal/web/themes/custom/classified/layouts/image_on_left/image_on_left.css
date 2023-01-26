@@ -1,0 +1,9 @@
+.image-on-left {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 1em;
+}
+
+.page .image-on-left .main-region {
+  margin-top: 0;
+}

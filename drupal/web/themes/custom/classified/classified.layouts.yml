@@ -1,0 +1,14 @@
+image_on_left:
+  label: 'Image on Left'
+  category: 'HCPSS'
+  path: layouts/image_on_left
+  template: layout--image-on-left
+  default_region: main
+  library: classified/image_on_left
+  icon_map:
+    - [ image, main ]
+  regions:
+    image:
+      label: Image
+    main:
+      label: Main

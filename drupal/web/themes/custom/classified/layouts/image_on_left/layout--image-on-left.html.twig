@@ -1,0 +1,14 @@
+{% if content %}
+  <div {{ attributes.addClass('image-on-left') }}>
+    {% if content.image %}
+      <div {{ region_attributes.image.addClass('image-region') }}>
+        {{ content.image }}
+      </div>
+    {% endif %}
+    {% if content.main %}
+      <div {{ region_attributes.main.addClass('main-region') }}>
+        {{ content.main }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
