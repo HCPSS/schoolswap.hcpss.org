@@ -1,7 +1,14 @@
-.page .form-actions > * {
+.page .form-actions > *,
+.page .views-exposed-form > *,
+.view-id-listing .view-filters {
   margin-top: 0;
 }
 
 #block-cart .cart {
   text-align: right;
+}
+
+a.button {
+  cursor: pointer;
+  appearance: button;
 }

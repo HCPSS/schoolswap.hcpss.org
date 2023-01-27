@@ -1,4 +1,4 @@
-uuid: c85b1386-949b-4f0b-9f15-35e747c2f428
+uuid: 0d183363-2cd2-4b5f-b58e-f83a387a5c18
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
     - classified
 id: cart
 theme: classified
-region: content
-weight: -5
+region: primary_menu
+weight: 0
 provider: null
 plugin: hcpss_classified_cart
 settings:

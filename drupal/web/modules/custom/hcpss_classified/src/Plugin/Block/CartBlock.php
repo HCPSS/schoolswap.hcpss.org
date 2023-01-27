@@ -4,6 +4,7 @@ namespace Drupal\hcpss_classified\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Link;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\AccessAwareRouterInterface;
 use Drupal\Core\Url;
@@ -95,18 +96,23 @@ class CartBlock extends BlockBase implements ContainerFactoryPluginInterface {
       }
     }
 
-    if ($count) {
-      $build['content'] = [
-        '#markup' => vsprintf('<div class="cart">%d items in cart. <a href="%s">Checkout &raquo;</a></div>', [
-          $count,
-          Url::fromRoute('hcpss_classified.checkout')->toString(),
-        ]),
-      ];
-    } else {
-      $build['content'] = [
-        '#markup' => '<div class="cart">0 items in cart.</div>',
-      ];
-    }
+    $build['menu'] = [
+      '#type' => 'container',
+      '#attributes' => ['class' => 'cart'],
+    ];
+
+//    $build['menu']['pickup'] = [
+//      '#type' => 'link',
+//      '#title' => $this->t('Request a Pick-up'),
+//      '#url' => Url::fromRoute('hcpss_classified.pick_up'),
+//    ];
+
+    $checkout = Link::createFromRoute($this->t('Checkout'), 'hcpss_classified.checkout')->toString();
+    $checkout .= " ($count items in cart)";
+    $build['menu']['content'] = [
+      '#markup' => $checkout,
+      '#prefix' => ' | ',
+    ];
 
     return $build;
   }
