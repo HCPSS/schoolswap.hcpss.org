@@ -250,7 +250,7 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: 'Pick-up request submitted'
-      body: "<p>Submitted on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n<p>Submitted by: {{ webform_token('[webform_submission:user]', webform_submission, [], options) }}</p>\r\n<p>Submitted values are:</p>\r\n{{ webform_token('[webform_submission:values:name]', webform_submission, [], options) }}\r\n"
+      body: "<p>Submitted on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n<p>Submitted by: {{ webform_token('[webform_submission:user]', webform_submission, [], options) }}</p>\r\n<p>Submitted values are:<br>\r\n<strong>Name:</strong> {{ webform_token('[webform_submission:values:name]', webform_submission, [], options) }}<br>\r\n<strong>Location:</strong> {{ webform_token('[webform_submission:values:school]', webform_submission, [], options) }}<br>\r\n<strong>Pick up date:</strong> {{ webform_token('[webform_submission:values:date]', webform_submission, [], options) }}<br>\r\n<strong>Items:</strong><br>{{ webform_token('[webform_submission:values:items]', webform_submission, [], options) }}\r\n</p>"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
