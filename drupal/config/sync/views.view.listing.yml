@@ -505,7 +505,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="{{ path(''entity.node.canonical'', {''node'': nid}, {''query'': {''destination'': path(''<current>'')}}) }}" class="button">Request</a>'
+            text: '<a href="{{ path(''entity.node.canonical'', {''node'': nid}) }}" class="button">Request</a>'
             make_link: false
             path: ''
             absolute: false

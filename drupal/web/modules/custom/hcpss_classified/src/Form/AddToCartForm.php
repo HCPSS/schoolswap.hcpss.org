@@ -99,9 +99,6 @@ class AddToCartForm extends FormBase {
     );
 
     switch ($form_state->getValue('op')) {
-      case $form_state->getValue('submit'):
-        $form_state->setRedirect('<front>');
-        break;
       case $form_state->getValue('checkout'):
         $form_state->setRedirect('entity.webform.canonical', ['webform' => 'checkout']);
         break;
