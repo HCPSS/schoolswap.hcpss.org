@@ -107,7 +107,7 @@ class CartBlock extends BlockBase implements ContainerFactoryPluginInterface {
       '#url' => Url::fromRoute('entity.webform.canonical', ['webform' => 'pickup']),
     ];
 
-    $checkout = Link::createFromRoute($this->t('Checkout'), 'hcpss_classified.checkout')->toString();
+    $checkout = Link::createFromRoute($this->t('Checkout'), 'entity.webform.canonical', ['webform' => 'checkout'])->toString();
     $checkout .= " ($count items in cart)";
     $build['menu']['content'] = [
       '#markup' => $checkout,

@@ -1,0 +1,9 @@
+{% if flexbox %}
+  {{ content }}
+{% else %}
+  {{ attach_library('hcpss_classified/line_item') }}
+  <div style="display:none;">{{ content.item }}</div>
+  <div>{{ content.item['#default_value'][0].getTitle }}</div>
+  {{ content.quantity }}
+  <div style="text-align:right;"><a href="/remove/{{ content.item['#default_value'][0].id }}">Remove</a></div>
+{% endif %}

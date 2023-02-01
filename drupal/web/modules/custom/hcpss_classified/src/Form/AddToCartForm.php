@@ -103,7 +103,7 @@ class AddToCartForm extends FormBase {
         $form_state->setRedirect('<front>');
         break;
       case $form_state->getValue('checkout'):
-        $form_state->setRedirect('hcpss_classified.checkout');
+        $form_state->setRedirect('entity.webform.canonical', ['webform' => 'checkout']);
         break;
       default:
         $form_state->setRedirect('<front>');

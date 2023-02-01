@@ -1,0 +1,13 @@
+.webform-type-line-item-composite .fieldset-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+}
+
+.webform-type-line-item-composite .form-number {
+  width: 5em;
+}
+
+#webform-submission-checkout-add-form #edit-items-items {
+  width: 100%;
+}

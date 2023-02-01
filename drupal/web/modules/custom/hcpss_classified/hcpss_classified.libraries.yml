@@ -1,0 +1,5 @@
+line_item:
+  version: VERSION
+  css:
+    theme:
+      css/line_item.css: {}

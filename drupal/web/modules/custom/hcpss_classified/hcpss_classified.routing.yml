@@ -10,14 +10,6 @@ hcpss_classified.add_to_cart:
       node:
         type: 'entity:node'
 
-hcpss_classified.checkout:
-  path: '/checkout'
-  defaults:
-    _title: 'Checkout'
-    _form: 'Drupal\hcpss_classified\Form\CheckoutForm'
-  requirements:
-    _permission: 'access content'
-
 hcpss_classified.remove_listing:
   path: '/remove/{node}'
   defaults:

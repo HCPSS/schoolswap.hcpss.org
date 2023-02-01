@@ -3,6 +3,33 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Render\Markup;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_insert().
+ */
+function hcpss_classified_webform_submission_insert(EntityInterface $entity) {
+  \Drupal::requestStack()->getCurrentRequest()->getSession()->set('cart', []);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function hcpss_classified_form_webform_submission_checkout_add_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $cart = \Drupal::requestStack()
+    ->getCurrentRequest()
+    ->getSession()
+    ->get('cart');
+
+  $form['elements']['items']['#default_value'] = [];
+  foreach ($cart as $nid => $quantity) {
+    $form['elements']['items']['#default_value'][] = [
+      'item' => $nid,
+      'quantity' => $quantity,
+    ];
+  }
+}
 
 /**
  * Implements hook_form_alter().
@@ -53,4 +80,39 @@ function hcpss_classified_mail($key, &$message, $params) {
       ]));
       break;
   }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function hcpss_classified_theme() {
+  return [
+    'line_item_composite' => [
+      'render element' => 'element',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for line_item_composite templates.
+ *
+ * Default template: line-item-composite.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - element: An associative array containing the properties of the element.
+ */
+function template_preprocess_line_item_composite(array &$variables) {
+  // Here you can get the composite element and alter it.
+  $element = $variables['element'];
+
+  // Copy all accessible element children to content.
+  foreach (Element::children($element) as $key) {
+    if (!isset($element[$key]['#access']) || $element[$key]['#access']) {
+      $variables['content'][$key] = $element[$key];
+    }
+  }
+
+  // Set flexbox variable used for multi column element layout.
+  $variables['flexbox'] = $element['#flexbox'] ?? FALSE;
 }
