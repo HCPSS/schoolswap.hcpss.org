@@ -1,9 +1,16 @@
 uuid: a001911a-f7eb-46ec-9dc9-1686c15399d7
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - webform
+    - webform_submission_log
 id: recipient
 label: Recipient
 weight: -8
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access webform submission log'
+  - 'edit any webform submission'
+  - 'edit own webform submission'
+  - 'view any webform submission'
