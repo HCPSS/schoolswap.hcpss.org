@@ -22,12 +22,14 @@ function hcpss_classified_form_webform_submission_checkout_add_form_alter(&$form
     ->getSession()
     ->get('cart');
 
-  $form['elements']['items']['#default_value'] = [];
-  foreach ($cart as $nid => $quantity) {
-    $form['elements']['items']['#default_value'][] = [
-      'item' => $nid,
-      'quantity' => $quantity,
-    ];
+  if (!empty($cart)) {
+    $form['elements']['items']['#default_value'] = [];
+    foreach ($cart as $nid => $quantity) {
+      $form['elements']['items']['#default_value'][] = [
+        'item' => $nid,
+        'quantity' => $quantity,
+      ];
+    }
   }
 }
 

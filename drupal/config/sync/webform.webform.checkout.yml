@@ -32,6 +32,7 @@ elements: |-
     '#type': line_item_composite
     '#title': Items
     '#multiple': true
+    '#multiple__no_items_message': 'Cart is empty.'
     '#multiple__empty_items': 0
     '#multiple__sorting': false
     '#multiple__operations': false

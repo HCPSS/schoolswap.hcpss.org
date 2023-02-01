@@ -2,7 +2,11 @@ uuid: a001911a-f7eb-46ec-9dc9-1686c15399d7
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.listing
   module:
+    - contextual
+    - node
     - webform
     - webform_submission_log
 id: recipient
@@ -10,7 +14,15 @@ label: Recipient
 weight: -8
 is_admin: null
 permissions:
+  - 'access content overview'
+  - 'access contextual links'
   - 'access webform submission log'
+  - 'create listing content'
+  - 'delete any listing content'
+  - 'delete own listing content'
+  - 'edit any listing content'
   - 'edit any webform submission'
+  - 'edit own listing content'
   - 'edit own webform submission'
   - 'view any webform submission'
+  - 'view own unpublished content'

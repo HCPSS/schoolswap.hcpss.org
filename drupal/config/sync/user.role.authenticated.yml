@@ -7,10 +7,12 @@ dependencies:
   module:
     - comment
     - contact
+    - contextual
     - filter
     - shortcut
     - simple_image_rotate
     - system
+    - toolbar
     - webform
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
@@ -19,12 +21,16 @@ label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
+  - 'access administration pages'
   - 'access comments'
   - 'access content'
+  - 'access contextual links'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'access toolbar'
   - 'access webform overview'
   - 'post comments'
   - 'rotate images'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view the administration theme'

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.listing
+    - taxonomy.vocabulary.category
     - taxonomy.vocabulary.tags
   module:
     - comment
@@ -14,7 +15,8 @@ dependencies:
     - system
     - taxonomy
     - toolbar
-    - tour
+    - webform
+    - webform_submission_log
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
@@ -26,22 +28,29 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
-  - 'access tour'
+  - 'access webform submission log'
   - 'administer url aliases'
   - 'create listing content'
+  - 'create terms in category'
   - 'create terms in tags'
   - 'create url aliases'
   - 'delete any listing content'
   - 'delete listing revisions'
   - 'delete own listing content'
+  - 'delete terms in category'
   - 'edit any listing content'
+  - 'edit any webform submission'
   - 'edit own comments'
   - 'edit own listing content'
+  - 'edit own webform submission'
+  - 'edit terms in category'
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'revert listing revisions'
   - 'view all revisions'
+  - 'view any webform submission'
   - 'view listing revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
