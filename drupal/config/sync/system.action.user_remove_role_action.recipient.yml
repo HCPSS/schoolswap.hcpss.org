@@ -1,0 +1,14 @@
+uuid: 3858f0bc-6c19-432a-a352-87842645c925
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.recipient
+  module:
+    - user
+id: user_remove_role_action.recipient
+label: 'Remove the Recipient role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: recipient

@@ -2,17 +2,47 @@
 
 namespace Drupal\hcpss_classified\Form;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\ParagraphInterface;
+use Drupal\user\Entity\User;
+use Drupal\user\UserInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a HCPSS Classified form.
  */
 class CheckoutForm extends FormBase {
+
+  /**
+   * @var \Drupal\Core\Mail\MailManagerInterface
+   */
+  protected $mailer;
+
+  /**
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  public function __construct(MailManagerInterface $mailer, EntityTypeManagerInterface $entityTypeManager) {
+    $this->mailer = $mailer;
+    $this->entityTypeManager = $entityTypeManager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('plugin.manager.mail'),
+      $container->get('entity_type.manager')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -32,8 +62,6 @@ class CheckoutForm extends FormBase {
         '#markup' => '<p>Your cart is empty</p>',
       ]];
     }
-
-
 
     $form['name'] = [
       '#type' => 'textfield',
@@ -59,7 +87,7 @@ class CheckoutForm extends FormBase {
       '#required' => FALSE,
     ];
 
-    $form['comment'] = [
+    $form['comments'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Comments'),
       '#required' => FALSE,
@@ -108,17 +136,13 @@ class CheckoutForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-//    if (mb_strlen($form_state->getValue('message')) < 10) {
-//      $form_state->setErrorByName('message', $this->t('Message should be at least 10 characters.'));
-//    }
+
   }
 
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    dpm($form_state->getValues());
-
     $line_items = [];
     foreach ($form_state->getValue('line_items') as $item) {
       $listing = Node::load($item['nid']);
@@ -143,12 +167,29 @@ class CheckoutForm extends FormBase {
     ]);
     $node->save();
 
+    $ids = $this->entityTypeManager->getStorage('user')->getQuery()
+      ->condition('status', 1)
+      ->condition('roles', 'recipient')
+      ->execute();
+
+    if (empty($ids)) {
+      return;
+    }
+
+    $emails = array_reduce(User::loadMultiple($ids), function (array $carry, UserInterface $item) {
+      $carry[] = $item->getEmail();
+      return $carry;
+    }, []);
+
+    $result = $this->mailer->mail(
+      'hcpss_classified',
+      'hcpss_classified_checkout',
+      implode(', ', $emails),
+      'en',
+      ['nid' => $node->id()]
+    );
+
     $this->getRequest()->getSession()->set('cart', []);
-    $this->messenger()->addStatus('Tkanks!');
-
-
-//    $this->messenger()->addStatus($this->t('The message has been sent.'));
-//    $form_state->setRedirect('<front>');
+    $this->messenger()->addStatus('Thanks!');
   }
-
 }

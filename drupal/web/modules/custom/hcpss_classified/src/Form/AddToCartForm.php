@@ -4,6 +4,7 @@ namespace Drupal\hcpss_classified\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
@@ -90,7 +91,12 @@ class AddToCartForm extends FormBase {
     $session->set('cart', $cart);
 
     $node = Node::load($nid);
-    $this->messenger()->addStatus("<em>{$node->getTitle()}<em> added to cart");
+    $this->messenger()->addStatus(
+      Markup::create("
+        <em>{$node->getTitle()}<em> added to cart.
+        <a href=\"/checkout\">Checkout</a> to complete your request.
+      ")
+    );
 
     switch ($form_state->getValue('op')) {
       case $form_state->getValue('submit'):

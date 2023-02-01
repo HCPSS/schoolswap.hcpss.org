@@ -1,0 +1,16 @@
+<div style="font-size:16px;">
+  <p><strong>Name:</strong> {{ node.field_name.value }}</p>
+  <p><strong>Location:</strong> {{ node.field_school.value }}</p>
+  <p><strong>Delivery Date:</strong> {{ node.field_date.value }}</p>
+  <p><strong>Return Date:</strong> {{ node.field_return_date.value }}</p>
+  <p><strong>Comments:</strong><br>{{ node.field_comments.value }}</p>
+  <p>
+    <strong>Items:</strong><br>
+    {% for line_item in line_items %}
+      {{ line_item.field_quantity.value }}
+      <a href="{{ path('entity.node.canonical', {'node': line_item.field_listing.entity.id}) }}">
+        {{ line_item.field_listing.entity.getTitle }}
+      </a><br>
+    {% endfor %}
+  </p>
+</div>

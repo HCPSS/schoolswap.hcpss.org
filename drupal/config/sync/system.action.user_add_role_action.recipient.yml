@@ -1,0 +1,14 @@
+uuid: 7db3be23-49d4-4ca6-9142-846b59c9f4aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.recipient
+  module:
+    - user
+id: user_add_role_action.recipient
+label: 'Add the Recipient role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: recipient

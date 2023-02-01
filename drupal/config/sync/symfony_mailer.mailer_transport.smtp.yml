@@ -1,0 +1,18 @@
+uuid: 694f61cc-71dd-4d9d-ab0e-fdf2e3f5e8c2
+langcode: en
+status: true
+dependencies: {  }
+id: smtp
+label: SMTP
+plugin: smtp
+configuration:
+  user: ''
+  pass: ''
+  host: ironport.hcpss.org
+  port: 25
+  query:
+    verify_peer: false
+    local_domain: ''
+    restart_threshold: null
+    restart_threshold_sleep: null
+    ping_threshold: null

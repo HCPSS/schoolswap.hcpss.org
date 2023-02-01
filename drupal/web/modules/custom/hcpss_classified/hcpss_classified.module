@@ -1,6 +1,8 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Render\Markup;
 
 /**
  * Implements hook_form_alter().
@@ -12,7 +14,6 @@ function hcpss_classified_form_views_exposed_form_alter(&$form, FormStateInterfa
       ->getStorage('taxonomy_term');
 
     $categories = $storage->loadTree('category');
-    $locations = $storage->loadTree('locations');
 
     $options_formatter = function (array $terms) {
       return array_reduce($terms, function ($carry, $item) {
@@ -27,5 +28,29 @@ function hcpss_classified_form_views_exposed_form_alter(&$form, FormStateInterfa
       '#title' => t('Category'),
       '#options' => $options_formatter($categories),
     ];
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function hcpss_classified_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'hcpss_classified_checkout':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = 'An inventory request has been made';
+      $message['headers']['Content-Type'] = 'text/html';
+
+      $template_path = \Drupal::service('extension.list.module')
+          ->getPath('hcpss_classified') . '/templates/email/checkout.html.twig';
+
+      $template = \Drupal::service('twig')->loadTemplate($template_path);
+
+      $node = Node::load($params['nid']);
+      $message['body'][] = Markup::create($template->render([
+        'node' => $node,
+        'line_items' => $node->field_line_items->referencedEntities(),
+      ]));
+      break;
   }
 }

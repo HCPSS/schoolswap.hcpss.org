@@ -101,11 +101,11 @@ class CartBlock extends BlockBase implements ContainerFactoryPluginInterface {
       '#attributes' => ['class' => 'cart'],
     ];
 
-//    $build['menu']['pickup'] = [
-//      '#type' => 'link',
-//      '#title' => $this->t('Request a Pick-up'),
-//      '#url' => Url::fromRoute('hcpss_classified.pick_up'),
-//    ];
+    $build['menu']['pickup'] = [
+      '#type' => 'link',
+      '#title' => $this->t('Request a Pick-up'),
+      '#url' => Url::fromRoute('entity.webform.canonical', ['webform' => 'pickup']),
+    ];
 
     $checkout = Link::createFromRoute($this->t('Checkout'), 'hcpss_classified.checkout')->toString();
     $checkout .= " ($count items in cart)";

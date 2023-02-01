@@ -2,21 +2,21 @@
 version: '3.5'
 
 services:
-#  mailhog:
-#    container_name: classified_mailhog
-#    image: mailhog/mailhog
-#    user: root
-#    expose:
-#      - "25"
-#    ports:
-#      - 8029:8025
-#    environment:
-#      MH_SMTP_BIND_ADDR: 0.0.0.0:25
-#    networks:
-#      testing:
-#      email:
-#        aliases:
-#          - ironport.hcpss.org
+  mailhog:
+    container_name: classified_mailhog
+    image: mailhog/mailhog
+    user: root
+    expose:
+      - "25"
+    ports:
+      - 8030:8025
+    environment:
+      MH_SMTP_BIND_ADDR: 0.0.0.0:25
+    networks:
+      testing:
+      email:
+        aliases:
+          - ironport.hcpss.org
 
   db:
     container_name: classified_db

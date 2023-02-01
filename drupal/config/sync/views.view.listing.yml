@@ -166,7 +166,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -505,7 +505,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="{{ path(''hcpss_classified.add_to_cart'', {''node'': nid}, {''query'': {''destination'': path(''<current>'')}}) }}" class="button">Request</a>'
+            text: '<a href="{{ path(''entity.node.canonical'', {''node'': nid}, {''query'': {''destination'': path(''<current>'')}}) }}" class="button">Request</a>'
             make_link: false
             path: ''
             absolute: false
