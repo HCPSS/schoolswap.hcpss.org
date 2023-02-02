@@ -15,6 +15,9 @@ module:
   config_update: 0
   contact: 0
   contextual: 0
+  dashboards: 0
+  dashboards_views: 0
+  dashboards_webform: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -64,6 +67,7 @@ module:
   webform: 0
   webform_submission_log: 0
   webform_ui: 0
+  webform_views: 0
   webprofiler: 0
   externalauth: 10
   views: 10

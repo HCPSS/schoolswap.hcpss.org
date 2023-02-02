@@ -5,6 +5,44 @@ use Drupal\node\Entity\Node;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_toolbar().
+ */
+function hcpss_classified_toolbar() {
+  $items['dashboard'] = [
+    '#type' => 'toolbar_item',
+    '#weight' => -19,
+    '#attached' => [
+      'library' => ['dashboards/core'],
+    ],
+    'tab' => [
+      '#type' => 'link',
+      '#title' => t('Dashboard'),
+      '#url' => Url::fromRoute('entity.dashboard.canonical', [
+        'dashboard' => 'dashboard',
+      ]),
+      '#attributes' => [
+        'class' => [
+          'toolbar-icon',
+          'toolbar-menu-administration-dashboard',
+        ],
+      ],
+    ],
+  ];
+
+  return $items;
+}
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function hcpss_classified_toolbar_alter(&$items) {
+  if (!empty($items['dashboards'])) {
+    unset($items['dashboards']);
+  }
+}
 
 /**
  * Implements hook_entity_insert().

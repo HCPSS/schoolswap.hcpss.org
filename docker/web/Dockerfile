@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY docker/web/simplesaml       /srv/simplesaml_config
 COPY docker/web/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY docker/web/php.ini          /usr/local/etc/php/php.ini
 
 COPY docker/web/entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh

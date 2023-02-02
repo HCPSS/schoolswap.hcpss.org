@@ -3,11 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - dashboards.dashboard.dashboard
     - filter.format.basic_html
   module:
     - comment
     - contact
     - contextual
+    - dashboards
     - filter
     - shortcut
     - simple_image_rotate
@@ -29,6 +31,7 @@ permissions:
   - 'access site-wide contact form'
   - 'access toolbar'
   - 'access webform overview'
+  - 'can view dashboard dashboard'
   - 'post comments'
   - 'rotate images'
   - 'skip comment approval'

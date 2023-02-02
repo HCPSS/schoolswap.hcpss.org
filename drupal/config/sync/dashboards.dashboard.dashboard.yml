@@ -1,0 +1,57 @@
+uuid: 4969b50a-6dec-4cc0-a64c-853c8e812d3d
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard
+admin_label: Dashboard
+category: ''
+frontend: false
+weight: 0
+sections:
+  -
+    layout_id: layout_twocol_section
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+      column_widths: 50-50
+    components:
+      e173d64d-5e45-4b6a-83af-e8599687ef46:
+        uuid: e173d64d-5e45-4b6a-83af-e8599687ef46
+        region: first
+        configuration:
+          id: 'views_block:dashboard_listings-block_1'
+          label: Listings
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: Listings
+          items_per_page: none
+        weight: 0
+        additional: {  }
+      5d9366a4-bb77-4863-9b1c-269baa8563de:
+        uuid: 5d9366a4-bb77-4863-9b1c-269baa8563de
+        region: second
+        configuration:
+          id: 'views_block:dashboard_requests-dropoff_block'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 0
+        additional: {  }
+      9c96eff8-31ca-4ba5-9c8f-20c27f5557fb:
+        uuid: 9c96eff8-31ca-4ba5-9c8f-20c27f5557fb
+        region: second
+        configuration:
+          id: 'views_block:dashboard_requests-pickup_block'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 1
+        additional: {  }
+    third_party_settings: {  }
