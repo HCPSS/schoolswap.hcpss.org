@@ -3,7 +3,7 @@ _core:
 langcode: en
 uuid: 91956240-49e3-4cbf-8359-7081c2f8f976
 name: 'School Swap'
-mail: brendan_anderson@hcpss.org
+mail: notifications@hcpss.org
 slogan: ''
 page:
   403: ''

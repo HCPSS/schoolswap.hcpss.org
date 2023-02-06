@@ -16,7 +16,7 @@ services:
       testing:
       email:
         aliases:
-          - ironport.hcpss.org
+          - email-smtp.us-east-1.amazonaws.com
 
   db:
     container_name: classified_db
@@ -53,13 +53,14 @@ services:
       MYSQL_PORT: ${MYSQL_PORT}
       MYSQL_HOSTNAME: ${MYSQL_HOSTNAME}
       COMPOSER_PROCESS_TIMEOUT: 2000
+      SMTP_USERNAME: ${SMTP_USERNAME}
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
       DRUPAL_ENV: dev
     # extra_hosts:
     #  - "mpia.hcpss.localhost:127.0.0.1"
 #    command: >812
 #      bash -c "drush --root=/var/www/drupal/web upwd banderson admin
 #      && apache2-foreground"
-#    entrypoint: tail -f /dev/null
     networks:
       database:
       email:

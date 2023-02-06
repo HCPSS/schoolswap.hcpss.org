@@ -794,6 +794,17 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+
+if (getenv('DRUPAL_ENV') == 'dev') {
+  $config['config_split.config_split.development_split']['status'] = TRUE;
+}
+else {
+  $config['config_split.config_split.development_split']['status'] = FALSE;
+}
+
+$config['symfony_mailer.mailer_transport.ses']['configuration']['user'] = getenv('SMTP_USERNAME');
+$config['symfony_mailer.mailer_transport.ses']['configuration']['user'] = getenv('SMTP_PASSWORD');
+
 $settings['trusted_host_patterns'] = [
   '^localhost$',
   '^.+\.hcpss\.localhost$',
