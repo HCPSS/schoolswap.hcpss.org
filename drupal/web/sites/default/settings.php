@@ -803,7 +803,7 @@ else {
 }
 
 $config['symfony_mailer.mailer_transport.ses']['configuration']['user'] = getenv('SMTP_USERNAME');
-$config['symfony_mailer.mailer_transport.ses']['configuration']['user'] = getenv('SMTP_PASSWORD');
+$config['symfony_mailer.mailer_transport.ses']['configuration']['pass'] = getenv('SMTP_PASSWORD');
 
 $settings['trusted_host_patterns'] = [
   '^localhost$',
