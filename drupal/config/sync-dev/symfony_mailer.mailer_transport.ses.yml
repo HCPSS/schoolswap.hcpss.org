@@ -1,0 +1,18 @@
+uuid: f122ed3f-80de-49b2-b995-36417c9c25a0
+langcode: en
+status: true
+dependencies: {  }
+id: ses
+label: SES
+plugin: smtp
+configuration:
+  user: user
+  pass: pass
+  host: email-smtp.us-east-1.amazonaws.com
+  port: 25
+  query:
+    verify_peer: false
+    local_domain: ''
+    restart_threshold: null
+    restart_threshold_sleep: null
+    ping_threshold: null

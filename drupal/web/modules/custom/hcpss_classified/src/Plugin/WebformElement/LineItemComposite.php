@@ -3,6 +3,7 @@
 namespace Drupal\hcpss_classified\Plugin\WebformElement;
 
 use Drupal\Core\Annotation\Translation;
+use Drupal\node\Entity\Node;
 use Drupal\webform\Annotation\WebformElement;
 use Drupal\webform\Plugin\WebformElement\WebformCompositeBase;
 use Drupal\webform\WebformSubmissionInterface;
@@ -24,7 +25,16 @@ class LineItemComposite extends WebformCompositeBase {
    * {@inheritdoc}
    */
   protected function formatHtmlItemValue(array $element, WebformSubmissionInterface $webform_submission, array $options = []) {
-    return $this->formatTextItemValue($element, $webform_submission, $options);
+    $value = $this->getValue($element, $webform_submission, $options);
+    $item = Node::load($value['item']);
+    $quantity = $value['quantity'];
+
+    $markup  = vsprintf('<div>(%d) %s</div>', [
+      $quantity,
+      $item->toLink()->toString(),
+    ]);
+
+    return [$markup];
   }
 
   /**

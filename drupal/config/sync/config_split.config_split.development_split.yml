@@ -15,6 +15,7 @@ module:
 theme: {  }
 blacklist: {  }
 graylist:
+  - symfony_mailer.mailer_transport.ses
   - system.performance
-graylist_dependents: true
-graylist_skip_equal: true
+graylist_dependents: false
+graylist_skip_equal: false
