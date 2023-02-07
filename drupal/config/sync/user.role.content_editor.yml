@@ -12,6 +12,7 @@ dependencies:
     - file
     - node
     - path
+    - publishcontent
     - system
     - taxonomy
     - toolbar
@@ -47,8 +48,15 @@ permissions:
   - 'edit own webform submission'
   - 'edit terms in category'
   - 'edit terms in tags'
+  - 'publish editable content'
+  - 'publish editable node type listing'
+  - 'publish own node type listing'
   - 'revert all revisions'
   - 'revert listing revisions'
+  - 'unpublish any node type listing'
+  - 'unpublish editable content'
+  - 'unpublish editable node type listing'
+  - 'unpublish own node type listing'
   - 'view all revisions'
   - 'view any webform submission'
   - 'view listing revisions'
