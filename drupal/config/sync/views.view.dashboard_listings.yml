@@ -476,6 +476,20 @@ display:
           plugin_id: standard
           required: true
       show_admin_links: false
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<a href="/node/add" class="button button--action button--primary" data-drupal-link-system-path="node/add/listing">Add a listing</a>'
+            format: full_html
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1
