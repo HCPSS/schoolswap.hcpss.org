@@ -60,6 +60,7 @@
         "drupal/simplesamlphp_auth": "^3.3",
         "drupal/symfony_mailer": "^1.2@beta",
         "drupal/token": "^1.11",
+        "drupal/view_unpublished": "^1.0",
         "drupal/webform": "^6.1",
         "drupal/webform_views": "^5.1",
         "drupal/webprofiler": "^9.0",

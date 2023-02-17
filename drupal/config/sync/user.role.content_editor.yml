@@ -11,11 +11,13 @@ dependencies:
     - contextual
     - file
     - node
+    - paragraphs
     - path
     - publishcontent
     - system
     - taxonomy
     - toolbar
+    - view_unpublished
     - webform
     - webform_submission_log
 _core:
@@ -60,7 +62,13 @@ permissions:
   - 'unpublish editable node type listing'
   - 'unpublish own node type listing'
   - 'view all revisions'
+  - 'view any unpublished article content'
+  - 'view any unpublished content'
+  - 'view any unpublished listing content'
+  - 'view any unpublished order content'
+  - 'view any unpublished page content'
   - 'view any webform submission'
   - 'view listing revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
+  - 'view unpublished paragraphs'
