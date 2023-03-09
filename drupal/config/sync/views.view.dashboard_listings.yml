@@ -485,7 +485,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: text
-          empty: false
+          empty: true
           content:
             value: '<a href="/node/add" class="button button--action button--primary" data-drupal-link-system-path="node/add/listing">Add a listing</a>'
             format: full_html
