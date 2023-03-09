@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Not implemented
+
+#
+#SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+#
+#docker-compose build drupal
+#
+#docker run --rm \
+#    -v $SCRIPT_DIR/../drupal:/var/www/drupal \
+#    --entrypoint='' \
+#    reg.hcpss.org/ieq/web:dev mkdir -p /var/www/drupal/files
+#
+#docker run --rm \
+#    -v $SCRIPT_DIR/../drupal:/var/www/drupal \
+#    --entrypoint='' \
+#    reg.hcpss.org/ieq/web:dev chown -R www-data:www-data /var/www/drupal/files
+#
+#docker run --rm \
+#    -v $SCRIPT_DIR/../drupal:/var/www/drupal \
+#    --entrypoint='' \
+#    reg.hcpss.org/ieq/web:dev composer install -d /var/www/drupal

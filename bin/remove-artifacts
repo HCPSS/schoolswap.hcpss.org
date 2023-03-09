@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Not implemented
+
+#
+#SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+#
+#mv $SCRIPT_DIR/../drupal $SCRIPT_DIR/../drupal1
+#
+#mkdir -p $SCRIPT_DIR/../drupal/web/modules
+#mkdir -p $SCRIPT_DIR/../drupal/web/themes
+#mkdir -p $SCRIPT_DIR/../drupal/web/sites/default
+#
+#mv $SCRIPT_DIR/../drupal1/web/autoload.php               $SCRIPT_DIR/../drupal/web/autoload.php
+#mv $SCRIPT_DIR/../drupal1/.gitignore                     $SCRIPT_DIR/../drupal/.gitignore
+#mv $SCRIPT_DIR/../drupal1/.travis.yml                    $SCRIPT_DIR/../drupal/.travis.yml
+#mv $SCRIPT_DIR/../drupal1/LICENSE                        $SCRIPT_DIR/../drupal/LICENSE
+#mv $SCRIPT_DIR/../drupal1/files                          $SCRIPT_DIR/../drupal/files
+#mv $SCRIPT_DIR/../drupal1/phpunit.xml.dist               $SCRIPT_DIR/../drupal/phpunit.xml.dist
+#mv $SCRIPT_DIR/../drupal1/web/modules/custom             $SCRIPT_DIR/../drupal/web/modules/custom
+#mv $SCRIPT_DIR/../drupal1/web/themes/custom              $SCRIPT_DIR/../drupal/web/themes/custom
+#mv $SCRIPT_DIR/../drupal1/scripts                        $SCRIPT_DIR/../drupal/scripts
+#mv $SCRIPT_DIR/../drupal1/drush                          $SCRIPT_DIR/../drupal/drush
+#mv $SCRIPT_DIR/../drupal1/composer.json                  $SCRIPT_DIR/../drupal/composer.json
+#mv $SCRIPT_DIR/../drupal1/composer.lock                  $SCRIPT_DIR/../drupal/composer.lock
+#mv $SCRIPT_DIR/../drupal1/config                         $SCRIPT_DIR/../drupal/config
+#mv $SCRIPT_DIR/../drupal1/web/sites/default/settings.php $SCRIPT_DIR/../drupal/web/sites/default/settings.php
+#mv $SCRIPT_DIR/../drupal1/load.environment.php           $SCRIPT_DIR/../drupal/load.environment.php
+#mv $SCRIPT_DIR/../drupal1/README.md                      $SCRIPT_DIR/../drupal/README.md
+#mv $SCRIPT_DIR/../drupal1/web/.ht.router.php             $SCRIPT_DIR/../drupal/web/.ht.router.php
+#
+#rm -rf $SCRIPT_DIR/../drupal1

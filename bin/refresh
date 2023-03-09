@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+# Not implemented
+
+#
+#USER_DIR="$(cd ~ && pwd)"
+#SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+#PROJECT_DIR="$SCRIPT_DIR/../"
+#
+#cd $PROJECT_DIR && docker-compose down
+#
+#sleep 5
+#
+#if [ ! -f "$USER_DIR/.aws/credentials" ]; then
+#    echo "Could not find AWS credentials at $USER_DIR/.aws/credentials"
+#    exit 1
+#fi
+#
+#if [ ! -f "$PROJECT_DIR/.env" ]; then
+#    cp "$PROJECT_DIR/.env.dist" "$PROJECT_DIR/.env"
+#fi
+#
+#echo "Remove old files..."
+#docker run --rm \
+#    -v $PROJECT_DIR:/app \
+#    ubuntu rm -rf \
+#        /app/drupal.sql \
+#        /app/.data \
+#        /app/.files \
+#        /app/drupal/files \
+#        /app/drupal/web/sites/default/files
+#
+#mkdir -p $PROJECT_DIR/.files
+#
+#FILENAME=`docker run --rm \
+#    -v $USER_DIR/.aws:/root/.aws \
+#    cgswong/aws aws s3 ls s3://hcpss.web.backups/ieq/ \
+#        | sort \
+#        | tail -n 1 \
+#        | awk '{print $4}'`
+#
+#echo "Create backup directory"
+#mkdir -p $PROJECT_DIR/backup
+#
+#echo "Download archive..."
+#docker run --rm \
+#    -v $USER_DIR/.aws:/root/.aws \
+#    -v $PROJECT_DIR/backup:/backup \
+#    cgswong/aws aws s3 cp s3://hcpss.web.backups/ieq/$FILENAME /backup/$FILENAME
+#
+#echo "Untar..."
+#cd $PROJECT_DIR/backup && tar -xzf ./$FILENAME
+#
+#echo "Move files..."
+#mv $PROJECT_DIR/backup/drupal.sql        $PROJECT_DIR/drupal.sql
+#mv $PROJECT_DIR/backup/files/ieq_private $PROJECT_DIR/drupal/files
+#mv $PROJECT_DIR/backup/files/ieq_public  $PROJECT_DIR/drupal/web/sites/default/files
+#
+#echo "Remove backup..."
+#rm -rf $PROJECT_DIR/backup
+#
+#
+#echo "Launch docker..."
+#cd $PROJECT_DIR && docker-compose up -d --build
