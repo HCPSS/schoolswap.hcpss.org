@@ -2,11 +2,13 @@
 
 namespace Drupal\hcpss_classified\Plugin\Block;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\AccessAwareRouterInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -114,6 +116,13 @@ class CartBlock extends BlockBase implements ContainerFactoryPluginInterface {
       '#prefix' => ' | ',
     ];
 
+    $build['menu']['logout'] = [
+      '#type' => 'link',
+      '#title' => $this->t('Logout'),
+      '#url' => Url::fromRoute('user.logout'),
+      '#prefix' => ' | ',
+    ];
+
     return $build;
   }
 
@@ -122,5 +131,9 @@ class CartBlock extends BlockBase implements ContainerFactoryPluginInterface {
    */
   public function getCacheMaxAge() {
     return 0;
+  }
+
+  public function blockAccess(AccountInterface $account) {
+    return AccessResult::allowedIfHasPermission($account, 'submit item request');
   }
 }

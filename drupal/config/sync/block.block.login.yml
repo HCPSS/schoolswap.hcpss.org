@@ -1,0 +1,20 @@
+uuid: 219b892d-9c38-4dee-b60f-eacfdc698b3c
+langcode: en
+status: true
+dependencies:
+  module:
+    - hcpss_classified
+  theme:
+    - classified
+id: login
+theme: classified
+region: primary_menu
+weight: 0
+provider: null
+plugin: hcpss_classified_login
+settings:
+  id: hcpss_classified_login
+  label: Login
+  label_display: '0'
+  provider: hcpss_classified
+visibility: {  }

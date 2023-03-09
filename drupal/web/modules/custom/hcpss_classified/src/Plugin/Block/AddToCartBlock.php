@@ -3,10 +3,11 @@
 namespace Drupal\hcpss_classified\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Http\RequestStack;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
 use Drupal\hcpss_classified\Form\AddToCartForm;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -34,6 +35,11 @@ class AddToCartBlock extends BlockBase implements ContainerFactoryPluginInterfac
   protected $requestStack;
 
   /**
+   * @var AccountInterface
+   */
+  protected $account;
+
+  /**
    * Constructs a new AddToCartBlock instance.
    *
    * @param array $configuration
@@ -50,10 +56,11 @@ class AddToCartBlock extends BlockBase implements ContainerFactoryPluginInterfac
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, FormBuilderInterface $form_builder, RequestStack $request_stack) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, FormBuilderInterface $form_builder, RequestStack $request_stack, AccountInterface $account) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->formBuilder = $form_builder;
     $this->requestStack = $request_stack;
+    $this->account = $account;
   }
 
   /**
@@ -65,7 +72,8 @@ class AddToCartBlock extends BlockBase implements ContainerFactoryPluginInterfac
       $plugin_id,
       $plugin_definition,
       $container->get('form_builder'),
-      $container->get('request_stack')
+      $container->get('request_stack'),
+      $container->get('current_user')
     );
   }
 
@@ -77,7 +85,16 @@ class AddToCartBlock extends BlockBase implements ContainerFactoryPluginInterfac
       return [];
     }
 
-    return $this->formBuilder->getForm(AddToCartForm::class);
+    if ($this->account->hasPermission('submit item request')) {
+      return $this->formBuilder->getForm(AddToCartForm::class);
+    } else {
+      $build['login_link'] = [
+        '#title' => $this->t('Login to request this item.'),
+        '#type' => 'link',
+        '#url' => Url::fromRoute('simplesamlphp_auth.saml_login'),
+      ];
+      return $build;
+    }
   }
 
   /**

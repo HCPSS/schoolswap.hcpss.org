@@ -4,7 +4,9 @@
   margin-top: 0;
 }
 
-#block-cart .cart {
+#block-cart .cart,
+.login-block {
+  margin-top: 1.5em;
   text-align: right;
 }
 

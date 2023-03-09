@@ -12,7 +12,7 @@ $config = array(
 
   'default-sp' => [
     'saml:SP',
-		'entityID' => 'mpia-dev',
+		'entityID' => 'schoolswap-dev',
 		'idp' => 'https://hcpss.me/saml/saml2/idp/metadata.php',
 		'discoURL' => NULL,
   ],

@@ -179,21 +179,29 @@ settings:
   serial_disabled: false
 access:
   create:
-    roles:
-      - anonymous
-      - authenticated
-    users: {  }
-    permissions: {  }
-  view_any:
     roles: {  }
+    users: {  }
+    permissions:
+      - 'submit item request'
+  view_any:
+    roles:
+      - recipient
+      - content_editor
+      - administrator
     users: {  }
     permissions: {  }
   update_any:
-    roles: {  }
+    roles:
+      - recipient
+      - content_editor
+      - administrator
     users: {  }
     permissions: {  }
   delete_any:
-    roles: {  }
+    roles:
+      - recipient
+      - content_editor
+      - administrator
     users: {  }
     permissions: {  }
   purge_any:

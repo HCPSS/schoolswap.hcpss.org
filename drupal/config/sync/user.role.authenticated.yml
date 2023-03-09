@@ -11,6 +11,7 @@ dependencies:
     - contextual
     - dashboards
     - filter
+    - hcpss_classified
     - shortcut
     - simple_image_rotate
     - system
@@ -35,5 +36,6 @@ permissions:
   - 'post comments'
   - 'rotate images'
   - 'skip comment approval'
+  - 'submit item request'
   - 'use text format basic_html'
   - 'view the administration theme'

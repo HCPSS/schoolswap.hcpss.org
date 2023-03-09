@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_simplesamlphp_auth_allow_login().
+ */
+function hcpss_saml_login_simplesamlphp_auth_allow_login($attributes) {
+  if (str_contains($attributes['distinguishedName'][0], ',OU=Users,OU=')) {
+    return TRUE;
+  } else {
+    \Drupal::messenger()->addError(t('Only HCPSS staff members can log into this website.'));
+    return FALSE;
+  }
+}
