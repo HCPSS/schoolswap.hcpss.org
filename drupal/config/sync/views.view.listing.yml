@@ -720,7 +720,20 @@ display:
           plugin_id: search_api
           required: false
           skip_access: false
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<p>Welcome to School Swap!  If you are interested in any items listed below, click Request and complete the necessary information for delivery.  If you have an item in good shape that you would like to add to School Swap, fill out a Pick-Up/Delivery form and send directly to the Logistics Center.  Please note that items will be given on a first come, first serve basis.</p>'
+            format: basic_html
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -738,6 +751,7 @@ display:
         - 'config:field.storage.node.field_pictures'
         - 'config:field.storage.node.field_quantity'
         - 'config:search_api.index.default_index'
+        - 'search_api_list:default_index'
   page_1:
     id: page_1
     display_title: Page
@@ -761,3 +775,4 @@ display:
         - 'config:field.storage.node.field_pictures'
         - 'config:field.storage.node.field_quantity'
         - 'config:search_api.index.default_index'
+        - 'search_api_list:default_index'
