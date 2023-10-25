@@ -22,7 +22,7 @@ $config = array(
      * reverse proxy).
      */
     'baseurlpath' => 'simplesaml/',
-    // 'baseurlpath' => 'http://ieq.hcpss.localhost:8084/simplesaml/',
+    // 'baseurlpath' => 'https://ieq.hcpss.org:80/simplesaml/',
     'certdir' => 'cert/',
     'loggingdir' => 'log/',
     'datadir' => 'data/',
