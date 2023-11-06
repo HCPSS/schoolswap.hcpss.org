@@ -79,4 +79,5 @@ theme:
   stable: 0
   parity: 0
   classified: 0
+  stable9: 0
 profile: minimal

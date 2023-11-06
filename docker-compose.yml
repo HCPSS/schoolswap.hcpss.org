@@ -57,17 +57,14 @@ services:
       SMTP_USERNAME: ${SMTP_USERNAME}
       SMTP_PASSWORD: ${SMTP_PASSWORD}
       DRUPAL_ENV: dev
-    # extra_hosts:
-    #  - "mpia.hcpss.localhost:127.0.0.1"
     command: >
       bash -c "drush --root=/var/www/drupal/web upwd admin admin
       && apache2-foreground"
+#    entrypoint: tail -f /dev/null
     networks:
       database:
       email:
       testing:
-        # aliases:
-        #   - mpia.hcpss.localosts
 
 networks:
   database:
