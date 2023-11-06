@@ -3,7 +3,7 @@ version: '3.5'
 
 services:
   mailhog:
-    container_name: classified_mailhog
+    container_name: swap_mailhog
     image: mailhog/mailhog
     user: root
     expose:
@@ -19,11 +19,11 @@ services:
           - email-smtp.us-east-1.amazonaws.com
 
   db:
-    container_name: classified_db
+    container_name: swap_db
     image: mysql:5.7
     volumes:
       - ./.data:/var/lib/mysql
-      # - ./drupal.sql:/docker-entrypoint-initdb.d/drupal.sql
+      - ./drupal.sql:/docker-entrypoint-initdb.d/drupal.sql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -34,7 +34,7 @@ services:
       - database
 
   drupal:
-    container_name: classified_web
+    container_name: swap_web
     depends_on:
       - db
     image: reg.hcpss.org/schoolswap/web:${VERSION:-dev}
@@ -46,6 +46,7 @@ services:
       - "8200:80"
     volumes:
       - ./drupal:/var/www/drupal
+      - ./.files:/var/www/drupal/web/sites/default/files
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
@@ -58,9 +59,9 @@ services:
       DRUPAL_ENV: dev
     # extra_hosts:
     #  - "mpia.hcpss.localhost:127.0.0.1"
-#    command: >812
-#      bash -c "drush --root=/var/www/drupal/web upwd banderson admin
-#      && apache2-foreground"
+    command: >
+      bash -c "drush --root=/var/www/drupal/web upwd admin admin
+      && apache2-foreground"
     networks:
       database:
       email:

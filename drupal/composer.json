@@ -22,7 +22,7 @@
                 "source": {
                     "url": "https://github.com/HCPSS/parity.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "drupal10"
                 }
             }
         },
@@ -58,6 +58,7 @@
         "drupal/search_api": "^1.28",
         "drupal/simple_image_rotate": "^2.1.1-alpha1",
         "drupal/simplesamlphp_auth": "^3.3",
+        "drupal/stable": "^2.0",
         "drupal/symfony_mailer": "^1.2@beta",
         "drupal/token": "^1.11",
         "drupal/view_unpublished": "^1.0",
