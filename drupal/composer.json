@@ -22,7 +22,7 @@
                 "source": {
                     "url": "https://github.com/HCPSS/parity.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "drupal10"
                 }
             }
         },

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5ff60962cdd6d54dfdcbe320a220ea7",
+    "content-hash": "4ef73e5b14b95b90f2c0ccb69fc69f29",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4624,7 +4624,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/HCPSS/parity.git",
-                "reference": "master"
+                "reference": "drupal10"
             },
             "type": "drupal-theme"
         },
