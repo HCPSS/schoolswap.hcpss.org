@@ -4,7 +4,7 @@ base theme: parity
 description: A site specific theme.
 package: HCPSS
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 libraries:
   - classified/global
   - parity/global-styling
