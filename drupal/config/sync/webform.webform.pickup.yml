@@ -11,7 +11,7 @@ archive: false
 id: pickup
 title: Pick-Up
 description: ''
-category: ''
+categories: {  }
 elements: |-
   school:
     '#type': textfield

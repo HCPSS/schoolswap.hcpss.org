@@ -4,7 +4,7 @@ namespace Drupal\hcpss_classified\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormBuilderInterface;
-use Drupal\Core\Http\RequestStack;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;

@@ -41,6 +41,7 @@ permissions:
   - 'create url aliases'
   - 'delete any listing content'
   - 'delete listing revisions'
+  - 'delete own files'
   - 'delete own listing content'
   - 'delete terms in category'
   - 'edit any listing content'

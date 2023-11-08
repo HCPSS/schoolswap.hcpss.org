@@ -1,18 +1,15 @@
 #!/usr/bin/env bash
 
-# Not implemented
+set -e
 
-#set -e
-#
-#SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-#
-#docker exec ieq_web drush site:install -y --account-pass=admin --existing-config
-#docker exec ieq_web drush user:create sderkins --mail="susie_derkins@hcpss.org" --password="sderkins"
-#docker exec ieq_web drush user:role:add inspector sderkins
-#docker exec ieq_web drush user:create sspiff --mail="spaceman_spiff@hcpss.org" --password="sspiff"
-#docker exec ieq_web drush user:role:add manager sspiff
+docker compose -f docker-compose.yml -f docker-compose-test.yml exec drupal drush site:install -y --account-pass=admin --existing-config
+docker compose -f docker-compose.yml -f docker-compose-test.yml exec drupal drush user:create sderkins --mail="susie_derkins@hcpss.org" --password="sderkins"
+docker compose -f docker-compose.yml -f docker-compose-test.yml exec drupal drush user:role:add content_editor sderkins
+docker compose -f docker-compose.yml -f docker-compose-test.yml exec drupal drush user:create sspiff --mail="spaceman_spiff@hcpss.org" --password="sspiff"
+docker compose -f docker-compose.yml -f docker-compose-test.yml exec drupal drush user:role:add recipient sspiff
+docker compose -f docker-compose.yml -f docker-compose-test.yml exec drupal drush user:create btracer --mail="bullet_tracer@hcpss.org" --password="btracer"
+
 #docker exec ieq_web drush ieq:seed
-#docker exec ieq_web drush php-eval 'node_access_rebuild();'
-#
-#docker exec ieq_selenium pytest concern_submit_test.py --headed --server="chrome" --port=4444
-#docker exec ieq_selenium pytest work_orders_test.py --headed --server="chrome" --port=4444
+docker compose -f docker-compose.yml -f docker-compose-test.yml  exec drupal drush php-eval 'node_access_rebuild();'
+
+docker compose -f docker-compose.yml -f docker-compose-test.yml exec selenium pytest listing_test.py --headed --server="chrome" --port=4444

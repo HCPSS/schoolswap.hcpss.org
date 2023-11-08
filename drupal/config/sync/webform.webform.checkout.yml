@@ -11,7 +11,7 @@ archive: false
 id: checkout
 title: Checkout
 description: ''
-category: ''
+categories: {  }
 elements: |-
   school:
     '#type': textfield

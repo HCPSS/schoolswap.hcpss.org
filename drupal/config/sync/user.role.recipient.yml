@@ -6,6 +6,7 @@ dependencies:
     - node.type.listing
   module:
     - contextual
+    - file
     - node
     - webform
     - webform_submission_log
@@ -19,6 +20,7 @@ permissions:
   - 'access webform submission log'
   - 'create listing content'
   - 'delete any listing content'
+  - 'delete own files'
   - 'delete own listing content'
   - 'edit any listing content'
   - 'edit any webform submission'

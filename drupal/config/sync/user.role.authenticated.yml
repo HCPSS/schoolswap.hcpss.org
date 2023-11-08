@@ -5,11 +5,13 @@ dependencies:
   config:
     - dashboards.dashboard.dashboard
     - filter.format.basic_html
+    - filter.format.webform_default
   module:
     - comment
     - contact
     - contextual
     - dashboards
+    - file
     - filter
     - hcpss_classified
     - shortcut
@@ -33,9 +35,11 @@ permissions:
   - 'access toolbar'
   - 'access webform overview'
   - 'can view dashboard dashboard'
+  - 'delete own files'
   - 'post comments'
   - 'rotate images'
   - 'skip comment approval'
   - 'submit item request'
   - 'use text format basic_html'
+  - 'use text format webform_default'
   - 'view the administration theme'

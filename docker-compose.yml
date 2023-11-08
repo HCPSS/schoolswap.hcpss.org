@@ -46,7 +46,7 @@ services:
       - "8200:80"
     volumes:
       - ./drupal:/var/www/drupal
-      - ./.files:/var/www/drupal/web/sites/default/files
+      #- ./.files:/var/www/drupal/web/sites/default/files
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
@@ -57,6 +57,9 @@ services:
       SMTP_USERNAME: ${SMTP_USERNAME}
       SMTP_PASSWORD: ${SMTP_PASSWORD}
       DRUPAL_ENV: dev
+      SAML_BASE_URL: ${SAML_BASE_URL}
+      SAML_SALT: ${SAML_SALT}
+      SAML_ADMIN_PASSWORD: ${SAML_ADMIN_PASSWORD}
     command: >
       bash -c "drush --root=/var/www/drupal/web upwd admin admin
       && apache2-foreground"
