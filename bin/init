@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-# Not implemented
+set -e
 
-#set -e
-#
-#MYDIR="$(dirname "$0")"
-#
-#source $MYDIR/fetch-backup
-#source $MYDIR/fetch-dependencies
-#
-#cp .env.dist .env
+MYDIR="$(dirname "$0")"
+
+source $MYDIR/fetch-backup
+source $MYDIR/fetch-dependencies
+
+cp .env.dist .env

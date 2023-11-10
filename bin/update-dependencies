@@ -6,4 +6,4 @@ docker compose run \
     -v $(pwd)/drupal:/var/www/drupal \
     -e COMPOSER_PROCESS_TIMEOUT=3000 \
     --entrypoint="composer" \
-    drupal install
+    drupal update
