@@ -42,4 +42,6 @@ drush --root=/var/www/drupal/web search-api:clear
 drush --root=/var/www/drupal/web search-api:index
 drush --root=/var/www/drupal/web cr
 
+sleep 5 && touch /ready &
+
 exec "$@"
