@@ -3,15 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
     - core.entity_view_mode.node.search_index
     - field.field.node.article.body
-    - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - node.type.article
   module:
-    - comment
     - text
     - user
 _core:
@@ -27,14 +24,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  comment:
-    type: comment_default
-    label: hidden
-    settings:
-      pager_id: 0
-    third_party_settings: {  }
-    weight: 2
     region: content
   field_tags:
     type: entity_reference_label

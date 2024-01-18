@@ -14,6 +14,7 @@ if [ ! -f /srv/sqlite/sqlitedatabase.sq3 ]; then
     mkdir -p /srv/sqlite
     touch /srv/sqlite/sqlitedatabase.sq3
 fi
+chown -R www-data:www-data /srv/sqlite
 
 if [ -d /srv/simplesaml_php/log ]; then
     mkdir -p /srv/simplesaml_php/log

@@ -10,7 +10,6 @@ dependencies:
     - node.type.listing
     - system.menu.main
     - taxonomy.vocabulary.category
-    - taxonomy.vocabulary.locations
   module:
     - image
     - node
@@ -576,7 +575,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -786,7 +784,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:

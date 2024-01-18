@@ -70,7 +70,7 @@
         "drupal/view_unpublished": "^1.0",
         "drupal/webform": "^6.1",
         "drupal/webform_views": "^5.1",
-        "drush/drush": "^11.3",
+        "drush/drush": "^12.4",
         "hcpss/parity": "dev-master",
         "jackmoore/colorbox": "^1.6",
         "simplesamlphp/simplesamlphp": " ^2.0"

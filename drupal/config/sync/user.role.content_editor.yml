@@ -7,9 +7,9 @@ dependencies:
     - taxonomy.vocabulary.category
     - taxonomy.vocabulary.tags
   module:
-    - comment
     - contextual
     - file
+    - help
     - node
     - paragraphs
     - path
@@ -31,6 +31,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access help pages'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access webform submission log'
@@ -46,7 +47,6 @@ permissions:
   - 'delete terms in category'
   - 'edit any listing content'
   - 'edit any webform submission'
-  - 'edit own comments'
   - 'edit own listing content'
   - 'edit own webform submission'
   - 'edit terms in category'

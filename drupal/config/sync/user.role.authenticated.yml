@@ -7,13 +7,13 @@ dependencies:
     - filter.format.basic_html
     - filter.format.webform_default
   module:
-    - comment
     - contact
     - contextual
     - dashboards
     - file
     - filter
     - hcpss_classified
+    - help
     - shortcut
     - simple_image_rotate
     - system
@@ -27,18 +27,16 @@ weight: -9
 is_admin: false
 permissions:
   - 'access administration pages'
-  - 'access comments'
   - 'access content'
   - 'access contextual links'
+  - 'access help pages'
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'access toolbar'
   - 'access webform overview'
   - 'can view dashboard dashboard'
   - 'delete own files'
-  - 'post comments'
   - 'rotate images'
-  - 'skip comment approval'
   - 'submit item request'
   - 'use text format basic_html'
   - 'use text format webform_default'
