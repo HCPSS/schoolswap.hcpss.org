@@ -1068,7 +1068,7 @@ $config = [
    * This option allows you to specify a directory for your metadata outside of the standard metadata directory
    * included in the standard distribution of the software.
    */
-  'metadatadir' => '/srv/saml/metadata',
+  'metadatadir' => '/srv/simplesaml_config/metadata',
 
   /*
    * This option configures the metadata sources. The metadata sources is given as an array with
