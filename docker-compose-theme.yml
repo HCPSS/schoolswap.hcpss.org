@@ -1,0 +1,13 @@
+---
+version: '3.5'
+
+services:
+  theme:
+    container_name: swap_theme
+    image: banderson/sass
+    volumes:
+      - ./drupal/web/themes/contrib/parity:/app
+    working_dir: /app
+#    command: tail -f /dev/null
+    command: >
+      bash -c "npm install && npm run watch"

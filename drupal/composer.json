@@ -14,23 +14,15 @@
             "url": "https://git.drupalcode.org/issue/simple_image_rotate-3298061.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/HCPSS/parity",
+            "no-api": true
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8",
             "exclude": ["drupal/simple_image_rotate"]
 
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "hcpss/parity",
-                "version": "dev-master",
-                "type": "drupal-theme",
-                "source": {
-                    "url": "https://github.com/HCPSS/parity.git",
-                    "type": "git",
-                    "reference": "drupal10"
-                }
-            }
         },
         {
             "type": "package",
@@ -71,7 +63,7 @@
         "drupal/webform": "^6.1",
         "drupal/webform_views": "^5.1",
         "drush/drush": "^12.4",
-        "hcpss/parity": "dev-master",
+        "hcpss/parity": "dev-bootstrap",
         "jackmoore/colorbox": "^1.6",
         "simplesamlphp/simplesamlphp": " ^2.0"
     },
