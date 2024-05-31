@@ -1,0 +1,20 @@
+uuid: a70709e4-32ba-4b53-b74d-370114287d24
+langcode: en
+status: true
+dependencies:
+  module:
+    - hcpss_monitoring
+_core:
+  default_config_hash: 0uMhL5EfMmdPsGOJT-l8dsUITMuau1ZF7EkelmjrRKU
+id: drupal_version
+label: 'Drupal Version'
+description: 'Check the Drupal core version.'
+category: HCPSS
+plugin_id: drupal_version
+result_class: null
+value_label: Version
+value_type: string
+caching_time: 3600
+settings: {  }
+thresholds:
+  type: none

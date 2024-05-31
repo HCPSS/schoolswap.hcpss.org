@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
-set -e
-
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+VERSION=$(cat $SCRIPT_DIR/../VERSION)
 
-export VERSION=$(cat $SCRIPT_DIR/../VERSION)
+docker buildx create --use --name drupal_builder
 
-docker push reg.hcpss.org/schoolswap/web:${VERSION}
+docker buildx build \
+    -t reg.hcpss.org/schoolswap/web:${VERSION} \
+    -t reg.hcpss.org/schoolswap/web:latest \
+    --platform=linux/arm64,linux/amd64 \
+    -f docker/web/Dockerfile \
+    --push .
+
+docker buildx rm drupal_builder

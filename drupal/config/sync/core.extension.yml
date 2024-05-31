@@ -14,6 +14,7 @@ module:
   config_filter: 0
   config_split: 0
   config_update: 0
+  consumers: 0
   contact: 0
   contextual: 0
   dashboards: 0
@@ -31,6 +32,8 @@ module:
   file: 0
   filter: 0
   hcpss_classified: 0
+  hcpss_module_status: 0
+  hcpss_monitoring: 0
   hcpss_saml_login: 0
   help: 0
   history: 0
@@ -40,6 +43,7 @@ module:
   link: 0
   menu_link_content: 0
   menu_ui: 0
+  monitoring: 0
   mysql: 0
   node: 0
   options: 0
@@ -50,8 +54,10 @@ module:
   publishcontent: 0
   search_api: 0
   search_api_db: 0
+  serialization: 0
   shortcut: 0
   simple_image_rotate: 0
+  simple_oauth: 0
   simplesamlphp_auth: 0
   symfony_mailer: 0
   system: 0

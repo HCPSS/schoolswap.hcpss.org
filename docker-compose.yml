@@ -1,10 +1,8 @@
 ---
-version: '3.5'
-
 services:
   mailhog:
     container_name: swap_mailhog
-    image: mailhog/mailhog
+    image: banderson/mailhog
     user: root
     expose:
       - "25"
@@ -17,10 +15,9 @@ services:
       email:
         aliases:
           - email-smtp.us-east-1.amazonaws.com
-
   db:
     container_name: swap_db
-    image: mysql:5.7
+    image: mariadb:10.8
     volumes:
       - ./.data:/var/lib/mysql
       - ./drupal.sql:/docker-entrypoint-initdb.d/drupal.sql
@@ -32,7 +29,6 @@ services:
     command: --max-allowed-packet=128M
     networks:
       - database
-
   drupal:
     container_name: swap_web
     depends_on:

@@ -1,0 +1,20 @@
+uuid: 6f6f9711-df15-44c7-9e8e-2a0c0e163bef
+langcode: en
+status: true
+dependencies:
+  module:
+    - symfony_mailer
+id: core_requirements_symfony_mailer
+label: 'Module symfony_mailer'
+description: 'Requirements of the symfony_mailer module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: symfony_mailer
+  exclude_keys: {  }
+thresholds:
+  type: none

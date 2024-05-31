@@ -2,6 +2,18 @@
 
 set -e
 
+if [ ! -f /var/www/drupal/credentials/public.key ]; then
+    echo "oauth keys not found, generating..."
+    mkdir -p /var/www/drupal/credentials
+    openssl genrsa -out /var/www/drupal/credentials/private.key 2048
+    openssl rsa -in /var/www/drupal/credentials/private.key -pubout > /var/www/drupal/credentials/public.key
+    chmod 0755 /var/www/drupal/credentials
+    chmod 0600 /var/www/drupal/credentials/private.key
+    chmod 0600 /var/www/drupal/credentials/public.key
+    chown www-data:www-data /var/www/drupal/credentials/private.key
+    chown www-data:www-data /var/www/drupal/credentials/public.key
+fi
+
 if [ ! -d /var/www/drupal/files ]; then
     mkdir -p /var/www/drupal/files
 fi

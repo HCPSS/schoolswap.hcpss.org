@@ -1,0 +1,20 @@
+uuid: 8f29eacc-c947-41b4-b5c5-029d4fafc994
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplesamlphp_auth
+id: core_requirements_simplesamlphp_auth
+label: 'Module simplesamlphp_auth'
+description: 'Requirements of the simplesamlphp_auth module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: simplesamlphp_auth
+  exclude_keys: {  }
+thresholds:
+  type: none

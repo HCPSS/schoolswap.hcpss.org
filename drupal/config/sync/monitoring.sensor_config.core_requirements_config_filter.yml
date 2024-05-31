@@ -1,0 +1,20 @@
+uuid: a9a39ce0-37bc-46e8-823c-8dd0f6369aea
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_filter
+id: core_requirements_config_filter
+label: 'Module config_filter'
+description: 'Requirements of the config_filter module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: config_filter
+  exclude_keys: {  }
+thresholds:
+  type: none

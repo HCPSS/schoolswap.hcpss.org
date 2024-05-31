@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.article
     - node.type.listing
+    - node.type.order
+    - node.type.page
     - taxonomy.vocabulary.category
     - taxonomy.vocabulary.tags
   module:

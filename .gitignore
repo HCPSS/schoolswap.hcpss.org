@@ -5,3 +5,4 @@
 drupal.sql
 /*.sql
 /.files
+/drupal/credentials

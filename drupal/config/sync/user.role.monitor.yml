@@ -1,0 +1,14 @@
+uuid: 465dcf2e-427f-4649-9ede-158bb21fb253
+langcode: en
+status: true
+dependencies:
+  module:
+    - hcpss_module_status
+    - monitoring
+id: monitor
+label: Monitor
+weight: -6
+is_admin: null
+permissions:
+  - 'access module status'
+  - 'monitoring reports'

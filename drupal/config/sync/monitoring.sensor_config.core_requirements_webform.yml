@@ -1,0 +1,20 @@
+uuid: 10147c67-8fc1-4799-a60e-30e42ee65acf
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform
+id: core_requirements_webform
+label: 'Module webform'
+description: 'Requirements of the webform module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: webform
+  exclude_keys: {  }
+thresholds:
+  type: none

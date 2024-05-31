@@ -1,12 +1,11 @@
 ---
-version: '3.5'
 services:
   drupal:
     networks:
       - testing
   chrome:
     container_name: swap_chrome
-    image: selenium/standalone-chrome
+    image: seleniarm/standalone-chromium
     shm_size: 2gb
     ports:
       - 4444:4444
@@ -15,7 +14,7 @@ services:
       - testing
   selenium:
     container_name: swap_selenium
-    image: banderson/seleniumbase
+    image: banderson/selenium
     volumes:
       - ./selenium:/app
     command: tail -f /dev/null
