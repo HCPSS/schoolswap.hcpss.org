@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+set -e
+
+app="schoolswap"
+
+docker_run () {
+    docker compose \
+        -f docker-compose.yml \
+        -f docker-compose-test.yml \
+        $1
+}
+
+increment_version () {
+    version=$1
+    echo $version | while read line; do
+        IFS=.
+        set - $line
+        echo "$1.$2.$(($3+1))"
+    done
+}
+
+./bin/fetch-backup
+
+docker_run "up -d --build"
+
+echo "Waiting for web interface."
+times=50
+while :; do
+    if [ ${times} -eq 0 ]; then
+        break;
+    fi
+    docker_run "exec drupal stat /ready" && break
+    sleep 5
+    times=$(($times-1))
+done
+sleep 1
+
+echo "Updating dependencies."
+docker_run "exec drupal composer update"
+sleep 1
+
+echo "Updating database."
+docker_run "exec drupal drush updb -y"
+sleep 1
+
+echo "Export config"
+docker_run "exec drupal drush cex -y"
+sleep 1
+
+./bin/test
+if [ $? -neq 0 ]; then
+    echo "Tests failed for ${app}"
+    exit 1
+fi
+
+echo "Incrementing version"
+old_version=$(cat ./VERSION)
+new_version=$(increment_version $old_version)
+echo $new_version > ./VERSION
+
+echo "Committing changes"
+git add .
+git commit -m "Automated depedency update"
+git push origin main
+
+echo "Deploying changes"
+./bin/deploy
+
+echo "Cleaning up"
+docker_run "down"
+
+echo "${app} upgraded from ${old_version} to ${new_version}"

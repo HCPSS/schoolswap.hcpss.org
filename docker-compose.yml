@@ -41,7 +41,7 @@ services:
       - "8200:80"
     volumes:
       - ./drupal:/var/www/drupal
-      - ./.files/public_files:/var/www/drupal/web/sites/default/files
+      #- ./.files/public_files:/var/www/drupal/web/sites/default/files
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
