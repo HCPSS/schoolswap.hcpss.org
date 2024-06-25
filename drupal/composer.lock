@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42bd4473cb2c208aa7459c2bf5b149c7",
+    "content-hash": "108babfc979fc8881da6bee5e86009ac",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4656,18 +4656,19 @@
         },
         {
             "name": "hcpss/parity",
-            "version": "dev-bootstrap",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/HCPSS/parity",
-                "reference": "c303bdaf0e4636038550e0ec5b7ca194a20f8930"
+                "reference": "386155262c53b035be76a30135fad1e0a0afcd5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HCPSS/parity/zipball/c303bdaf0e4636038550e0ec5b7ca194a20f8930",
-                "reference": "c303bdaf0e4636038550e0ec5b7ca194a20f8930",
+                "url": "https://api.github.com/repos/HCPSS/parity/zipball/386155262c53b035be76a30135fad1e0a0afcd5a",
+                "reference": "386155262c53b035be76a30135fad1e0a0afcd5a",
                 "shasum": ""
             },
+            "default-branch": true,
             "type": "drupal-theme",
             "license": [
                 "GPL-2.0-or-later"
@@ -4679,7 +4680,7 @@
                 }
             ],
             "description": "Exposes monitoring sensors ",
-            "time": "2024-02-08T18:20:36+00:00"
+            "time": "2024-06-25T15:31:17+00:00"
         },
         {
             "name": "html2text/html2text",
@@ -10877,8 +10878,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/hcpss_monitoring": 20,
         "drupal/hcpss_module_status": 20,
+        "drupal/hcpss_monitoring": 20,
         "drupal/simple_image_rotate": 20,
         "drupal/simplesamlphp_auth": 5,
         "drupal/symfony_mailer": 10,
