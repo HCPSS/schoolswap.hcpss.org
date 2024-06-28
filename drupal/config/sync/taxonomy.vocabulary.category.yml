@@ -6,3 +6,4 @@ name: Category
 vid: category
 description: 'Categorize classified listings.'
 weight: 0
+new_revision: false

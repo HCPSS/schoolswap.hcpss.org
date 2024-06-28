@@ -19,6 +19,7 @@ class BaseTestCase(BaseCase):
         self.click('#edit-submit')
     def logout(self):
         self.open("http://drupal/user/logout")
+        self.click("#edit-submit")
     def assert_no_content(self, logout=True):
         self.open("http://drupal")
 

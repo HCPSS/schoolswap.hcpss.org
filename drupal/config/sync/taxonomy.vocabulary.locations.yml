@@ -8,3 +8,4 @@ name: Locations
 vid: locations
 description: 'HCPSS schools and facilities.'
 weight: 0
+new_revision: false

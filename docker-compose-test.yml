@@ -1,8 +1,5 @@
 ---
 services:
-  drupal:
-    networks:
-      - testing
   chrome:
     container_name: swap_chrome
     image: seleniarm/standalone-chromium

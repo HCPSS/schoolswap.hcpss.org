@@ -797,6 +797,8 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 if (getenv('DRUPAL_ENV') == 'dev') {
   $config['config_split.config_split.development_split']['status'] = TRUE;
+  // The above line should take care of this, but sometimes it doesn't.
+  $config['symfony_mailer.mailer_transport.ses']['configuration']['port'] = 25;
 }
 else {
   $config['config_split.config_split.development_split']['status'] = FALSE;

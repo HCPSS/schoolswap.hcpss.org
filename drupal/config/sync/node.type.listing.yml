@@ -13,7 +13,7 @@ _core:
 name: Listing
 type: listing
 description: 'An item you have to offer, or are looking for.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false
