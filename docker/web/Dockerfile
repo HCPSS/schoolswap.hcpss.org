@@ -8,8 +8,6 @@ LABEL org.hcpss.schoolswap.version="${VERSION}"
 
 ENV DRUPAL_ENV="prod"
 
-COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
-
 # SQLite for storing SimpleSAMLphp sessions.
 RUN apt-get update && apt-get install -y \
         sqlite3 \
