@@ -7,11 +7,6 @@ if [ ! -f /var/www/drupal/credentials/public.key ]; then
     mkdir -p /var/www/drupal/credentials
     openssl genrsa -out /var/www/drupal/credentials/private.key 2048
     openssl rsa -in /var/www/drupal/credentials/private.key -pubout > /var/www/drupal/credentials/public.key
-    chmod 0755 /var/www/drupal/credentials
-    chmod 0600 /var/www/drupal/credentials/private.key
-    chmod 0600 /var/www/drupal/credentials/public.key
-    chown www-data:www-data /var/www/drupal/credentials/private.key
-    chown www-data:www-data /var/www/drupal/credentials/public.key
 fi
 
 if [ ! -d /var/www/drupal/files ]; then
@@ -36,6 +31,11 @@ fi
 chown -R www-data:www-data /var/www/drupal/files
 chown -R www-data:www-data /var/www/drupal/config
 chown -R www-data:www-data /var/www/drupal/web/sites/default/files
+
+chown -R root:www-data /var/www/drupal/credentials
+chmod 550 /var/www/drupal/credentials
+chmod 440 /var/www/drupal/credentials/private.key
+chmod 440 /var/www/drupal/credentials/public.key
 
 chown root:root /var/www/drupal/web/sites/default/settings.php
 chmod 444 /var/www/drupal/web/sites/default/settings.php

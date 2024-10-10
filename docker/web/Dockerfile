@@ -1,4 +1,4 @@
-FROM banderson/drupal:8.3-build
+FROM banderson/drupal:8.3
 
 ARG VERSION="dev"
 
@@ -28,7 +28,20 @@ COPY docker/web/000-default.conf           /etc/apache2/sites-available/000-defa
 COPY docker/web/php.ini                    /usr/local/etc/php/php.ini
 COPY drupal/web/robots.txt                 /var/www/drupal/web.robots.txt
 
-RUN composer install -d /var/www/drupal
+COPY --chown=root:www-data --chmod=640 drupal/web/modules/custom             /var/www/drupal/web/modules/custom
+COPY --chown=root:www-data --chmod=640 drupal/web/themes/custom              /var/www/drupal/web/themes/custom
+COPY --chown=root:www-data --chmod=640 drupal/composer.json                  /var/www/drupal/composer.json
+COPY --chown=root:www-data --chmod=640 drupal/composer.lock                  /var/www/drupal/composer.lock
+COPY --chown=root:www-data --chmod=640 drupal/config                         /var/www/drupal/config
+COPY --chown=root:www-data --chmod=440 drupal/web/sites/default/settings.php /var/www/drupal/web/sites/default/settings.php
+
+RUN composer install -d /var/www/drupal --no-dev
+
+RUN cd web  \
+    && chown -R root:www-data /var/www/drupal \
+    && find . -type d -exec chmod u=rwx,g=rx,o=rx '{}' \; \
+    && find . -type f -exec chmod u=rw,g=r,o= '{}' \; \
+    && find . -type d -name files -exec chmod ug=rwx,o= '{}' \;
 
 COPY docker/web/entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
