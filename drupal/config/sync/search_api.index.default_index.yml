@@ -3,15 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.storage.node.body
     - field.storage.node.field_categories
     - search_api.server.default_server
-    - core.entity_view_mode.node.search_index
   module:
     - node
-    - user
     - taxonomy
-    - search_api
+    - user
 _core:
   default_config_hash: 3aiqici40Ky7H7_FK6JBlEawsJtrD7MGX3dQh3xgqoc
 id: default_index

@@ -126,9 +126,6 @@
         "patches":{
             "drupal/core": {
                 "Issue 3365626": "https://www.drupal.org/files/issues/2023-10-09/3365626-5.patch"
-            },
-            "drupal/webform": {
-                "Issue 3435903": "https://git.drupalcode.org/project/webform/-/merge_requests/429.diff"
             }
         },
         "drupal-scaffold": {
