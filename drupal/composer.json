@@ -68,6 +68,7 @@
         "drupal/reroute_email": "^2.2",
         "drupal/search_api": "^1.28",
         "drupal/simple_image_rotate": "dev-3298061-automated-drupal-10",
+        "drupal/simple_oauth": "^5.0",
         "drupal/simplesamlphp_auth": "^4.0@RC",
         "drupal/symfony_mailer": "^1.2@beta",
         "drupal/token": "^1.11",
