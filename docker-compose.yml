@@ -17,7 +17,7 @@ services:
           - email-smtp.us-east-1.amazonaws.com
   db:
     container_name: swap_db
-    image: mariadb:10.8
+    image: mariadb:lts
     volumes:
       - ./.data:/var/lib/mysql
       - ./drupal.sql:/docker-entrypoint-initdb.d/drupal.sql

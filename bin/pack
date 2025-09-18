@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+
+rm -rf ./.data
+rm -rf ./drupal.sql
+rm -rf ./drupal/files/*
+rm -rf ./drupal/web/sites/default/files/*
+git clean -dfX ./drupal
+git clean -dfX ./selenium
