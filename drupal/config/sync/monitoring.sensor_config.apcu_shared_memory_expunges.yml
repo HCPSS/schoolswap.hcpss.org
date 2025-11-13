@@ -1,0 +1,16 @@
+uuid: bcd8b87e-5f07-4cb3-acb6-b8efd2a2f5ca
+langcode: en
+status: true
+dependencies: {  }
+id: apcu_shared_memory_expunges
+label: 'APCu Shared Memory expunges (resets)'
+description: ''
+category: Performance
+plugin_id: apcu_shared_memory_expunges
+result_class: null
+value_label: expunges
+value_type: number
+caching_time: null
+settings: {  }
+thresholds:
+  type: none
