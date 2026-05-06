@@ -1,4 +1,4 @@
-FROM banderson/drupal:8.3
+FROM banderson/drupal:8.3.30
 
 ARG VERSION="dev"
 

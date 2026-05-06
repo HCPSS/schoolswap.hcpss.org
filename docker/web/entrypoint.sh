@@ -41,7 +41,7 @@ chown root:root /var/www/drupal/web/sites/default/settings.php
 chmod 444 /var/www/drupal/web/sites/default/settings.php
 
 # Wait for MySQL
-while ! mysqladmin ping -h"$MYSQL_HOSTNAME" --silent; do
+while ! mysqladmin ping -h"$MYSQL_HOSTNAME" --ssl-verify-server-cert=FALSE -u "$MYSQL_USER" -p"$MYSQL_PASSWORD"--silent; do
     echo "Waiting for database connection..."
     sleep 5
 done
