@@ -8,25 +8,25 @@ class BaseTestCase(BaseCase):
         username = role if not user else user.username
         password = role if not user else user.password
 
-        self.open("http://drupal/user/login")
+        self.open("http://web/user/login")
         self.type('#edit-name', username)
         self.type('#edit-pass', password)
         self.click('#edit-submit')
     def login_as_super(self):
-        self.open("http://drupal/user/login")
+        self.open("http://web/user/login")
         self.type('#edit-name', 'admin')
         self.type('#edit-pass', 'admin')
         self.click('#edit-submit')
     def logout(self):
-        self.open("http://drupal/user/logout")
+        self.open("http://web/user/logout")
         self.click("#edit-submit")
     def assert_no_content(self, logout=True):
-        self.open("http://drupal")
+        self.open("http://web")
 
         if (not self.is_logged_in()):
             self.login_as_admin()
 
-        self.open("http://drupal/admin/content")
+        self.open("http://web/admin/content")
         self.assert_text('No content available.')
 
         if (logout):
@@ -36,7 +36,7 @@ class BaseTestCase(BaseCase):
             self.logout()
         self.login()
 
-        self.open('http://drupal/admin/config/people/simplesamlphp_auth/local')
+        self.open('http://web/admin/config/people/simplesamlphp_auth/local')
         elements = self.find_elements('#edit-allow-default-login-roles input')
         for element in elements:
             if not element.is_selected():
@@ -49,7 +49,7 @@ class BaseTestCase(BaseCase):
         if (not self.is_logged_in()):
             self.login_as_admin()
 
-        self.open("http://drupal/admin/content")
+        self.open("http://web/admin/content")
 
         if (not self.is_text_visible('No content available.')):
             self.select_option_by_text("#edit-action", "Delete content")

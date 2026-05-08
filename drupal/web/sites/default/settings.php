@@ -813,6 +813,7 @@ $settings['trusted_host_patterns'] = [
   '^.+\.hocoschools\.org$',
   '^.+\.hcpss\.org$',
   '^drupal$',
+  '^web$',
 ];
 $databases['default']['default'] = array (
   'database' => getenv('MYSQL_DATABASE'),

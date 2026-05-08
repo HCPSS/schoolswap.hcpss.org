@@ -7,13 +7,9 @@ services:
     ports:
       - 4444:4444
       - 7900:7900
-    networks:
-      - testing
   selenium:
     container_name: swap_selenium
     image: banderson/selenium
     volumes:
       - ./selenium:/app
     command: tail -f /dev/null
-    networks:
-      - testing

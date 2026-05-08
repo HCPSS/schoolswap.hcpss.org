@@ -8,14 +8,14 @@ class ListingTest(BaseTestCase):
         self.allow_all_logins()
 
         self.login("admin")
-        self.open("http://drupal/admin/structure/taxonomy/manage/category/add")
+        self.open("http://web/admin/structure/taxonomy/manage/category/add")
         self.type("#edit-name-0-value", "Spaceships")
         self.click("#edit-submit")
         self.assert_text("Created new term Spaceships")
         self.logout()
 
         self.login("sderkins")
-        self.open("http://drupal/node/add/listing")
+        self.open("http://web/node/add/listing")
         self.type("#edit-title-0-value", "My Spaceship")
         self.type(".ck-content", "It's been in a few crashes but still works.")
         self.type("#edit-field-pictures-0-upload", "/app/spiff.jpg")
@@ -25,11 +25,11 @@ class ListingTest(BaseTestCase):
         self.click("#edit-submit")
         self.logout()
 
-        self.open("http://drupal")
+        self.open("http://web")
         self.assert_text("It's been in a few crashes but still works.")
 
         self.login("btracer")
-        self.open("http://drupal")
+        self.open("http://web")
         self.click_link("Request")
         self.click("#edit-checkout")
         self.type("#edit-school", "Office of space travel")

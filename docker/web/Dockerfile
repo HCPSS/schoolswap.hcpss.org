@@ -1,4 +1,4 @@
-FROM banderson/drupal:8.3.30
+FROM banderson/drupal:8.3.31-fpm
 
 ARG VERSION="dev"
 
@@ -7,6 +7,7 @@ LABEL vendor="Howard County Public School System"
 LABEL org.hcpss.schoolswap.version="${VERSION}"
 
 ENV DRUPAL_ENV="prod"
+ENV SIMPLESAMLPHP_CONFIG_DIR="/srv/simplesaml_config/config"
 
 # SQLite for storing SimpleSAMLphp sessions.
 RUN apt-get update && apt-get install -y \
@@ -15,14 +16,11 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /srv/sqlite
 
-RUN a2enmod rewrite
-
 # Create the Drupal structure
 COPY drupal/assets                         /var/www/drupal/assets
 
 # Config
 COPY docker/web/simplesaml                 /srv/simplesaml_config
-COPY docker/web/000-default.conf           /etc/apache2/sites-available/000-default.conf
 COPY docker/web/php.ini                    /usr/local/etc/php/php.ini
 COPY drupal/web/robots.txt                 /var/www/drupal/web.robots.txt
 
@@ -35,15 +33,12 @@ COPY --chown=root:www-data --chmod=440 drupal/web/sites/default/settings.php /va
 
 RUN composer install -d /var/www/drupal --no-dev
 
-RUN cd web  \
-    && chown -R root:www-data /var/www/drupal \
-    && find . -type d -exec chmod u=rwx,g=rx,o=rx '{}' \; \
-    && find . -type f -exec chmod u=rw,g=r,o= '{}' \; \
-    && find . -type d -name files -exec chmod ug=rwx,o= '{}' \;
+RUN /usr/local/bin/drupal_fix_permissions.sh -u=root -g=www-data -p=/var/www/drupal/web
 
 COPY docker/web/entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-
-EXPOSE 80
-CMD ["apache2-foreground"]
+VOLUME /var/www/drupal
+VOLUME /srv
+EXPOSE 9000
+CMD ["php-fpm"]
