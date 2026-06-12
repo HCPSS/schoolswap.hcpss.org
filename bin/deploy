@@ -10,6 +10,15 @@ docker buildx build \
     -t reg.hcpss.org/schoolswap/web:latest \
     --platform=linux/arm64,linux/amd64 \
     -f docker/web/Dockerfile \
+    --target=app \
+    --push .
+
+docker buildx build \
+    -t reg.hcpss.org/schoolswap/nginx:${VERSION} \
+    -t reg.hcpss.org/schoolswap/nginx:latest \
+    --platform=linux/arm64,linux/amd64 \
+    -f docker/web/Dockerfile \
+    --target=nginx \
     --push .
 
 docker buildx rm drupal_builder
