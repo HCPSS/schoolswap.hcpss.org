@@ -617,7 +617,7 @@ $config = [
    * Example:
    *  'session.cookie.domain' => '.example.org',
    */
-  'session.cookie.domain' => (getenv('DRUPAL_ENV') == 'dev') ? '.hcpss.localhost' : 'hcpss.org',
+  'session.cookie.domain' => (getenv('DRUPAL_ENV') == 'dev') ? '.hcpss.localhost' : '.hcpss.org',
 
   /*
    * Set the secure flag in the cookie.
@@ -646,7 +646,7 @@ $config = [
    *  'session.cookie.samesite' => 'None',
    */
   //'session.cookie.samesite' => $httpUtils->canSetSameSiteNone() ? 'None' : null,
-  'session.cookie.samesite' => 'Lax',
+  'session.cookie.samesite' => 'None',
 
   /*
    * Options to override the default settings for php sessions.
