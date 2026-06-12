@@ -1,0 +1,19 @@
+uuid: 0573c2bf-5eea-48da-b00a-2bcbb9ebe878
+langcode: en
+status: true
+dependencies: {  }
+id: content_editor
+name: content_editor
+description: 'Content editor'
+grant_types:
+  authorization_code:
+    status: true
+  client_credentials:
+    status: true
+  refresh_token:
+    status: true
+umbrella: false
+parent: null
+granularity_id: role
+granularity_configuration:
+  role: content_editor

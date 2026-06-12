@@ -1,0 +1,19 @@
+uuid: 9550d9a6-0679-496c-a08e-af3e34308061
+langcode: en
+status: true
+dependencies: {  }
+id: monitor
+name: monitor
+description: Monitor
+grant_types:
+  authorization_code:
+    status: true
+  client_credentials:
+    status: true
+  refresh_token:
+    status: true
+umbrella: false
+parent: null
+granularity_id: role
+granularity_configuration:
+  role: monitor

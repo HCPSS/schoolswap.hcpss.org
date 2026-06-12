@@ -1,4 +1,4 @@
-FROM banderson/drupal:8.3.31-fpm
+FROM banderson/drupal:8.4.22-fpm AS app
 
 ARG VERSION="dev"
 
@@ -33,7 +33,7 @@ COPY --chown=root:www-data --chmod=440 drupal/web/sites/default/settings.php /va
 
 RUN composer install -d /var/www/drupal --no-dev
 
-RUN /usr/local/bin/drupal_fix_permissions.sh -u=root -g=www-data -p=/var/www/drupal/web
+RUN fix-drupal-permissions -u=root -g=www-data -p=/var/www/drupal/web
 
 COPY docker/web/entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
@@ -42,3 +42,8 @@ VOLUME /var/www/drupal
 VOLUME /srv
 EXPOSE 9000
 CMD ["php-fpm"]
+
+FROM banderson/drupal-nginx:saml AS nginx
+
+COPY --from=app /var/www/drupal /var/www/drupal
+COPY --from=app /srv /srv

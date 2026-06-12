@@ -6,15 +6,16 @@ id: development_split
 label: 'Development Split'
 description: ''
 weight: 0
+stackable: false
+no_patching: false
+storage: folder
 folder: /var/www/drupal/config/sync-dev
 module:
   devel: 0
   devel_generate: 0
   reroute_email: 0
 theme: {  }
-blacklist: {  }
-graylist:
+complete_list: {  }
+partial_list:
   - symfony_mailer.mailer_transport.ses
   - system.performance
-graylist_dependents: false
-graylist_skip_equal: false

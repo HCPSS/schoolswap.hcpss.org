@@ -1,0 +1,19 @@
+uuid: beb00b1a-f191-4777-a38f-337ac637ad4d
+langcode: en
+status: true
+dependencies: {  }
+id: anonymous
+name: anonymous
+description: 'Anonymous user'
+grant_types:
+  authorization_code:
+    status: true
+  client_credentials:
+    status: true
+  refresh_token:
+    status: true
+umbrella: false
+parent: null
+granularity_id: role
+granularity_configuration:
+  role: anonymous

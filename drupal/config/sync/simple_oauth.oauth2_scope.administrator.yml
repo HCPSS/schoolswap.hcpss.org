@@ -1,0 +1,19 @@
+uuid: 3422c0aa-837e-4f56-818a-1811092ff8a1
+langcode: en
+status: true
+dependencies: {  }
+id: administrator
+name: administrator
+description: Administrator
+grant_types:
+  authorization_code:
+    status: true
+  client_credentials:
+    status: true
+  refresh_token:
+    status: true
+umbrella: false
+parent: null
+granularity_id: role
+granularity_configuration:
+  role: administrator

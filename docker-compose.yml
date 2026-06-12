@@ -34,6 +34,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/web/Dockerfile
+      target: app
     volumes:
       - ./drupal:/var/www/drupal
       #- ./.files/public_files:/var/www/drupal/web/sites/default/files
@@ -55,10 +56,13 @@ services:
       && php-fpm"
   web:
     container_name: swap_web
-    image: banderson/drupal-nginx:saml
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+      target: nginx
     depends_on:
       - drupal
     ports:
       - "8200:80"
-    volumes_from:
-      - drupal
+    volumes:
+      - ./drupal:/var/www/drupal

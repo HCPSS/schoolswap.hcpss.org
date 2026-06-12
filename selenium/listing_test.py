@@ -20,7 +20,7 @@ class ListingTest(BaseTestCase):
         self.type(".ck-content", "It's been in a few crashes but still works.")
         self.type("#edit-field-pictures-0-upload", "/app/spiff.jpg")
         self.click(".rotate-icon")
-        self.assert_attribute(".rotate-icon", "data-rotate", "90")
+        self.assert_element_present(".rotate-90")
         self.click("#edit-field-categories-1")
         self.click("#edit-submit")
         self.logout()

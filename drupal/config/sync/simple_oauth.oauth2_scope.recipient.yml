@@ -1,0 +1,19 @@
+uuid: 377c1398-3059-4fb4-a1c7-9f4e5d11550d
+langcode: en
+status: true
+dependencies: {  }
+id: recipient
+name: recipient
+description: Recipient
+grant_types:
+  authorization_code:
+    status: true
+  client_credentials:
+    status: true
+  refresh_token:
+    status: true
+umbrella: false
+parent: null
+granularity_id: role
+granularity_configuration:
+  role: recipient
