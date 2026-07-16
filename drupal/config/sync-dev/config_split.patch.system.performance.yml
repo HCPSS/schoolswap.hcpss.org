@@ -1,3 +1,11 @@
-adding: {  }
+adding:
+  css:
+    compress: true
+  js:
+    compress: true
 removing:
+  css:
+    gzip: true
+  js:
+    gzip: true
   stale_file_threshold: 2592000

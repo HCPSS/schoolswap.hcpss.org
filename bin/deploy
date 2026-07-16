@@ -3,9 +3,9 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 VERSION=$(cat $SCRIPT_DIR/../VERSION)
 
-docker buildx create --use --name drupal_builder
+docker buildx create --use --name swap_builder
 
-docker buildx build \
+docker buildx --builder=swap_builder build \
     -t reg.hcpss.org/schoolswap/web:${VERSION} \
     -t reg.hcpss.org/schoolswap/web:latest \
     --platform=linux/arm64,linux/amd64 \
@@ -13,7 +13,7 @@ docker buildx build \
     --target=app \
     --push .
 
-docker buildx build \
+docker buildx --builder=swap_builder build \
     -t reg.hcpss.org/schoolswap/nginx:${VERSION} \
     -t reg.hcpss.org/schoolswap/nginx:latest \
     --platform=linux/arm64,linux/amd64 \
@@ -21,4 +21,4 @@ docker buildx build \
     --target=nginx \
     --push .
 
-docker buildx rm drupal_builder
+docker buildx rm swap_builder

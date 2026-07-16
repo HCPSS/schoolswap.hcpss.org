@@ -4,9 +4,9 @@ services:
     container_name: swap_chrome
     image: seleniarm/standalone-chromium
     shm_size: 2gb
-    ports:
-      - 4444:4444
-      - 7900:7900
+#    ports:
+#      - 4444:4444
+#      - 7900:7900
   selenium:
     container_name: swap_selenium
     image: banderson/selenium
