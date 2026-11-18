@@ -9,6 +9,7 @@ docker buildx --builder=swap_builder build \
     -t reg.hcpss.org/schoolswap/web:${VERSION} \
     -t reg.hcpss.org/schoolswap/web:latest \
     --platform=linux/arm64,linux/amd64 \
+    --build-arg VERSION=${VERSION} \
     -f docker/web/Dockerfile \
     --target=app \
     --push .
@@ -17,6 +18,7 @@ docker buildx --builder=swap_builder build \
     -t reg.hcpss.org/schoolswap/nginx:${VERSION} \
     -t reg.hcpss.org/schoolswap/nginx:latest \
     --platform=linux/arm64,linux/amd64 \
+    --build-arg VERSION=${VERSION} \
     -f docker/web/Dockerfile \
     --target=nginx \
     --push .
