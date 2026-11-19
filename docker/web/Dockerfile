@@ -1,4 +1,4 @@
-FROM banderson/drupal:8.4.27-fpm AS app
+FROM banderson/drupal:8.4.28-fpm AS app
 
 ARG VERSION="dev"
 
