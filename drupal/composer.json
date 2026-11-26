@@ -103,6 +103,10 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "scripts": {
+        "post-install-cmd": ["rm -f web/core/install.php"],
+        "post-update-cmd": ["rm -f web/core/install.php"]
+    },
     "config": {
         "platform": {
             "php": "8.4"
